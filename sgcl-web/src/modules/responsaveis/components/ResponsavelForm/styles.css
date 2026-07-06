@@ -1,0 +1,4 @@
+.responsavel-form {
+  display: grid;
+  gap: var(--space-6);
+}

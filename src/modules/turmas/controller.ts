@@ -1,0 +1,81 @@
+import { Request, Response } from "express";
+
+import { CreateTurmaService } from "./services/CreateTurmaService";
+import { ListTurmasService } from "./services/ListTurmasService";
+import { VincularAlunoTurmaService } from "./services/VincularAlunoTurmaService";
+import { GetTurmaDetalhadaService } from "./services/GetTurmaDetalhadaService";
+
+export class TurmasController {
+
+  async create(
+    req: Request,
+    res: Response
+  ) {
+
+    const service =
+      new CreateTurmaService();
+
+    const turma =
+      await service.execute(req.body);
+
+    return res.status(201).json(turma);
+
+  }
+
+  async list(
+    req: Request,
+    res: Response
+  ) {
+
+    const service =
+      new ListTurmasService();
+
+    const turmas =
+      await service.execute();
+
+    return res.json(turmas);
+
+  }
+
+  async show(
+    req: Request,
+    res: Response
+  ) {
+
+    const { id } =
+      req.params;
+
+    const service =
+      new GetTurmaDetalhadaService();
+
+    const turma =
+      await service.execute(
+        Number(id)
+      );
+
+    return res.json(turma);
+
+  }
+
+  async vincularAluno(
+    req: Request,
+    res: Response
+  ) {
+
+    const { turmaId, alunoId } =
+      req.params;
+
+    const service =
+      new VincularAlunoTurmaService();
+
+    const aluno =
+      await service.execute(
+        Number(turmaId),
+        Number(alunoId)
+      );
+
+    return res.json(aluno);
+
+  }
+
+}

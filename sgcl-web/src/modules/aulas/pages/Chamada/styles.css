@@ -1,0 +1,12 @@
+.chamada-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+@media (max-width: 768px) {
+  .chamada-info-grid,
+  .chamada-comportamento-grid {
+    grid-template-columns: 1fr;
+  }
+}

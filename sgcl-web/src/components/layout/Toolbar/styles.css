@@ -1,0 +1,39 @@
+.toolbar {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: var(--space-4);
+
+  margin-bottom: var(--space-6);
+
+  flex-wrap: wrap;
+
+}
+
+.toolbar-left,
+.toolbar-center,
+.toolbar-right {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: var(--space-3);
+
+}
+
+.toolbar-center {
+
+  flex: 1;
+
+}
+
+.toolbar-right {
+
+  margin-left: auto;
+
+}

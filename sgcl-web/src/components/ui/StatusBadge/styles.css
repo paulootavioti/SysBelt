@@ -1,0 +1,40 @@
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 90px;
+
+  padding: 6px 12px;
+
+  border-radius: 999px;
+
+  font-size: var(--font-sm);
+
+  font-weight: 600;
+}
+
+.status-ativo {
+  background: rgba(22, 163, 74, .15);
+  color: var(--success);
+}
+
+.status-inativo {
+  background: rgba(220, 38, 38, .15);
+  color: var(--danger);
+}
+
+.status-pago {
+  background: rgba(22, 163, 74, .15);
+  color: var(--success);
+}
+
+.status-pendente {
+  background: rgba(217, 119, 6, .15);
+  color: var(--warning);
+}
+
+.status-vencido {
+  background: rgba(220, 38, 38, .15);
+  color: var(--danger);
+}

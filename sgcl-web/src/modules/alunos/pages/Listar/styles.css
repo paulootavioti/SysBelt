@@ -1,0 +1,46 @@
+.alunos-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+  align-items: end;
+}
+
+.alunos-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.alunos-table th,
+.alunos-table td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.alunos-table th {
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+.alunos-table-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.alunos-search {
+  margin-top: var(--space-4);
+  max-width: 420px;
+}
+
+.alunos-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: var(--space-4);
+}

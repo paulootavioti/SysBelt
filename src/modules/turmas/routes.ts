@@ -1,0 +1,39 @@
+import { Router } from "express";
+import { TurmasController } from "./controller";
+import { ensureAuthenticated } from "../../shared/middlewares/ensureAuthenticated";
+import { ensureRole } from "../../shared/middlewares/ensureRole";
+
+const turmasRoutes = Router();
+
+const turmasController =
+  new TurmasController();
+
+turmasRoutes.post(
+  "/",
+  ensureAuthenticated,
+  ensureRole(["ADMIN", "PROFESSOR", "RECEPCAO"]),
+  turmasController.create
+);
+
+turmasRoutes.get(
+  "/",
+  ensureAuthenticated,
+  ensureRole(["ADMIN", "PROFESSOR", "RECEPCAO"]),
+  turmasController.list
+);
+
+turmasRoutes.get(
+  "/:id",
+  ensureAuthenticated,
+  ensureRole(["ADMIN", "PROFESSOR", "RECEPCAO"]),
+  turmasController.show
+);
+
+turmasRoutes.patch(
+  "/:turmaId/alunos/:alunoId",
+  ensureAuthenticated,
+  ensureRole(["ADMIN", "PROFESSOR", "RECEPCAO"]),
+  turmasController.vincularAluno
+);
+
+export { turmasRoutes };

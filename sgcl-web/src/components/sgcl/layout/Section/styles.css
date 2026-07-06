@@ -1,0 +1,22 @@
+.sgcl-section {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.sgcl-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.sgcl-section-header h2 {
+  margin: 0;
+  color: var(--color-text);
+}
+
+.sgcl-section-header p {
+  margin: var(--space-1) 0 0;
+  color: var(--color-text-light);
+  font-size: var(--font-sm);
+}

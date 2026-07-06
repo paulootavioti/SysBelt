@@ -1,0 +1,52 @@
+import { prisma } from "../../../shared/database/prisma";
+import { AppError } from "../../../shared/errors/AppError";
+
+export class GetEvolucaoAlunoService {
+  async execute(alunoId: number) {
+    const aluno = await prisma.aluno.findUnique({
+      where: {
+        id: alunoId
+      }
+    });
+
+    if (!aluno) {
+      throw new AppError("Aluno não encontrado.");
+    }
+
+    const presencas = await prisma.aulaAluno.count({
+      where: {
+        alunoId,
+        presente: true,
+      },
+    });
+
+    const aulasPorGrau = 8;
+    const grausPorFaixa = 4;
+    const aulasPorFaixa = aulasPorGrau * grausPorFaixa;
+
+    const grauCalculado =
+      Math.floor(presencas / aulasPorGrau) % grausPorFaixa;
+
+    const aulasNaFaixaAtual =
+      presencas % aulasPorFaixa;
+
+    const faltamParaProximoGrau =
+      aulasPorGrau - (presencas % aulasPorGrau);
+
+    const faltamParaProximaFaixa =
+      aulasPorFaixa - aulasNaFaixaAtual;
+
+    return {
+      alunoId: aluno.id,
+      nome: aluno.nome,
+      faixaAtual: aluno.faixa,
+      grauAtual: aluno.grau,
+      grauCalculado,
+      presencas,
+      faltamParaProximoGrau:
+        faltamParaProximoGrau === 8 ? 0 : faltamParaProximoGrau,
+      faltamParaProximaFaixa:
+        faltamParaProximaFaixa === 32 ? 0 : faltamParaProximaFaixa
+    };
+  }
+}

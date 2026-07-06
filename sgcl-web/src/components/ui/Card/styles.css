@@ -1,0 +1,16 @@
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+
+.card p {
+  color: var(--text-light);
+  margin: 0 0 8px;
+}
+
+.card h2 {
+  margin: 0;
+  color: var(--text);
+}
