@@ -14,8 +14,7 @@ import { Loading } from "../../../../components/ui/Loading";
 
 import { calcularIdade } from "../../../../shared/formatters/data";
 
-import { getApiErrorMessage } from "../../utils/getApiErrorMessage";
-
+import { getApiErrorMessage } from "../../../../shared/utils/getApiErrorMessage";
 import { useAlunos } from "../../hooks/useAlunos";
 import type { Aluno } from "../../types";
 

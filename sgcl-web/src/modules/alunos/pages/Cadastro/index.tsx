@@ -7,7 +7,7 @@ import { ErrorMessage } from "../../../../components/ui/ErrorMessage";
 
 import { AlunoForm } from "../../components/AlunoForm";
 import { AlunoService } from "../../services/AlunoService";
-import { getApiErrorMessage } from "../../utils/getApiErrorMessage";
+import { getApiErrorMessage } from "../../../../shared/utils/getApiErrorMessage";
 
 import type { AlunoFormData } from "../../schema/aluno.schema";
 

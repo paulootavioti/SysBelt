@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { MensalidadeForm } from "../../components/MensalidadeForm";
 import { MensalidadeService } from "../../services/MensalidadeService";
-import { getApiErrorMessage } from "../../utils/getApiErrorMessage";
+import { getApiErrorMessage } from "../../../../shared/utils/getApiErrorMessage";
 import { useState } from "react";
 import type { MensalidadeFormData } from "../../schema/mensalidade.schema";
 

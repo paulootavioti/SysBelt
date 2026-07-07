@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { GraduacaoService } from "../../services/GraduacaoService";
 import type { AlunoElegivel } from "../../types";
 import { AlunoElegivelCard } from "../../components/AlunoElegivelCard";
-import { getApiErrorMessage } from "../../utils/helpers";
+import { getApiErrorMessage } from "../../../../shared/utils/getApiErrorMessage";
 import { GraduacaoForm } from "../../components/GraduacaoForm";
 import type { GraduacaoFormData } from "../../schema/graduacao.schema";
 
@@ -14,10 +14,6 @@ export function ProximasGraduacoes() {
   const [erro, setErro] = useState("");
   const [salvando, setSalvando] = useState(false);
   const [alunoSelecionado, setAlunoSelecionado] = useState<AlunoElegivel | null>(null);
-
-  useEffect(() => {
-    carregarProximas();
-  }, []);
 
   async function carregarProximas() {
     try {
@@ -31,6 +27,9 @@ export function ProximasGraduacoes() {
       setLoading(false);
     }
   }
+  useEffect(() => {
+    carregarProximas();
+  }, []);
 
   async function handleRegistrar(data: GraduacaoFormData) {
     try {

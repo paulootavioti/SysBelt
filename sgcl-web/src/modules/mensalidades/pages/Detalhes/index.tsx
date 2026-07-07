@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { MensalidadeService } from "../../services/MensalidadeService";
-import { getApiErrorMessage } from "../../utils/getApiErrorMessage";
+import { getApiErrorMessage } from "../../../../shared/utils/getApiErrorMessage";
 import { calcularStatusMensalidade, formatarStatusMensalidade, corStatusMensalidade } from "../../utils/status";
 import type { MensalidadeComAluno } from "../../types";
 

@@ -1,11 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useMensalidades } from "../hooks/useMensalidades";
-import { MensalidadeService } from "../services/MensalidadeService";
-import { MensalidadeCard } from "../components/MensalidadeCard";
-import { getApiErrorMessage } from "../utils/getApiErrorMessage";
-import { calcularStatusMensalidade } from "../utils/status";
-
+import { useMensalidades } from "../../hooks/useMensalidades";
+import { MensalidadeService } from "../../services/MensalidadeService";
+import { MensalidadeCard } from "../../components/MensalidadeCard";
+import { getApiErrorMessage } from "../../../../shared/utils/getApiErrorMessage";
+import { calcularStatusMensalidade } from "../../utils/status";
 
 
 export function ListarMensalidades() {

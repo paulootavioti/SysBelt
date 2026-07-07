@@ -2,7 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useGraduacoes } from "../../hooks/useGraduacoes";
 import { GraduacaoService } from "../../services/GraduacaoService";
-import { formatarData, getApiErrorMessage } from "../../utils/helpers";
+import { formatarData } from "../../utils/helpers";
+import { getApiErrorMessage } from "../../../../shared/utils/getApiErrorMessage";
 import type { GraduacaoFormData } from "../../schema/graduacao.schema";
 import { GraduacaoForm } from "../../components/GraduacaoForm";
 

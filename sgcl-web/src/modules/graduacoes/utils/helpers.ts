@@ -15,10 +15,3 @@ export function getIndiceFaixa(faixa: string): number {
 export function formatarData(data: string): string {
   return new Date(data).toLocaleDateString("pt-BR");
 }
-
-export function getApiErrorMessage(error: unknown, defaultMessage: string): string {
-  if (error instanceof Error) {
-    return error.message;
-  }
-  return defaultMessage;
-}
