@@ -46,6 +46,10 @@ export function Layout({
           📅 Aulas
         </Link>
 
+        <Link to="/planejamento">
+          📘 Planejamento Pedagógico
+        </Link>
+
         <Link to="/mensalidades">
           💰 Mensalidades
         </Link>

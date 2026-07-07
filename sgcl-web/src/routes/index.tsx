@@ -22,6 +22,7 @@ import { Relatorios } from "../modules/relatorios/pages/Listar";
 import { Competicoes } from "../modules/competicoes/pages/Listar";
 import { Financeiro } from "../modules/financeiro/pages/Listar";
 import { DetalheCompeticao } from "../modules/competicoes/pages/Detalhes";
+import { Curriculos } from "../modules/curriculos/pages/Listar";
 import { PrivateRoute } from "./PrivateRoute";
 
 export function AppRoutes() {
@@ -191,6 +192,15 @@ export function AppRoutes() {
         }
       />          
       
+      <Route
+        path="/planejamento"
+        element={
+          <PrivateRoute>
+            <Curriculos />
+          </PrivateRoute>
+        }
+      />
+
     </Routes>
   );
 }
