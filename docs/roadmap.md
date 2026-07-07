@@ -47,7 +47,7 @@ Fornecer uma plataforma moderna para academias de artes marciais que permita aco
 
 Versão
 
-0.7.0-alpha
+0.9.0-alpha
 
 Situação
 
@@ -99,18 +99,15 @@ Itens
 
 Status
 
-🟡 Em evolução
+✅ Concluído
 
 Implementado
 
 - Dashboard inicial
-
-Pendências
-
 - Indicadores
 - KPIs
 - Próximas graduações
-- Alertas
+- Alertas de mensalidades vencidas
 
 ---
 
@@ -250,16 +247,16 @@ Status
 
 Status
 
-🟡 Em desenvolvimento
+🟢 Estrutura concluída
 
 Implementado
 
 - Backend
 - Endpoint
+- Frontend
 
 Pendências
 
-- Frontend
 - Timeline
 - Gráficos
 
@@ -292,14 +289,14 @@ Status
 Implementado
 
 - Estrutura
-- Mensalidades (início)
+- Mensalidades
+- Recebimentos
+- Caixa
+- Inadimplência
 
 Pendências
 
-- Recebimentos
-- Caixa
 - PIX
-- Inadimplência
 
 ---
 
@@ -307,7 +304,13 @@ Pendências
 
 Status
 
-🟡 Estrutura pronta
+🟢 Concluído
+
+Implementado
+
+- Cadastro
+- Inscrição de atletas
+- Registro de resultado
 
 Pendências
 
@@ -321,13 +324,21 @@ Pendências
 
 Status
 
-🟡 Estrutura pronta
+🟢 Concluído
+
+Implementado
+
+- Financeiro
+- Ranking de frequência
+- Aniversariantes
+- Evolução do aluno
+- Comportamental
 
 Pendências
 
 - PDF
 - Excel
-- WhatsApp
+- Envio automático por WhatsApp
 
 ---
 
@@ -395,7 +406,7 @@ Pendências
 
 ## Sprint 11
 
-🟡 Prontuário
+✅ Prontuário
 
 ---
 
@@ -413,25 +424,25 @@ Pendências
 
 ## Sprint 14
 
-🟡 Dashboard Executivo
+✅ Dashboard Executivo
 
 ---
 
 ## Sprint 15
 
-🔵 Planejamento Pedagógico
+🟡 Planejamento Pedagógico
 
 ---
 
 ## Sprint 16
 
-🔵 Competições
+✅ Competições
 
 ---
 
 ## Sprint 17
 
-🔵 Relatórios
+✅ Relatórios
 
 ---
 

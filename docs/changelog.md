@@ -248,18 +248,92 @@ Início do módulo de mensalidades.
 
 ---
 
-# Próximas versões
+# 0.9.0-alpha
 
-## 0.9.0-alpha
+## Segurança
 
-Planejamento pedagógico.
+### Corrigido
 
-- Plano da aula
-- Objetivos
-- Técnicas sugeridas
-- Jogos
+- Rota `POST /auth/register` deixou de ser pública; agora exige um ADMIN autenticado
+- `GET /financeiro/resumo` liberado também para RECEPÇÃO (estava restrito só a ADMIN, contrariando as regras de negócio documentadas)
 
 ---
+
+## Prontuário
+
+### Corrigido
+
+- Tela de prontuário (já existente) agora está acessível a partir dos detalhes do aluno
+
+---
+
+## Usuários
+
+### Adicionado
+
+- Tela de administração de usuários: cadastro, troca de perfil, ativação/inativação
+
+---
+
+## Competições
+
+### Adicionado
+
+- Cadastro de competições
+- Inscrição de atletas
+- Registro de resultado por atleta
+
+---
+
+## Relatórios
+
+### Adicionado
+
+- Geração de relatórios em texto: financeiro, ranking de frequência, aniversariantes do mês, evolução do aluno, comportamental
+- Opção de copiar o texto gerado
+
+---
+
+## Dashboard
+
+### Adicionado
+
+- Alerta de mensalidades vencidas
+- Widget de próximas graduações
+- Reorganização em seções (Alunos e Atividades, Financeiro)
+
+---
+
+## Financeiro
+
+### Adicionado
+
+- Tela de caixa e inadimplência, com baixa de mensalidades vencidas direto na tela
+
+---
+
+## Planejamento Pedagógico
+
+### Adicionado
+
+- Cadastro de módulos, aulas planejadas (com objetivo e jogos sugeridos) e técnicas sugeridas dentro do currículo
+
+---
+
+## Correções gerais
+
+### Corrigido
+
+- Bug crítico de import que impedia o carregamento de toda a aplicação
+
+### Melhorado
+
+- Consolidação de tipos e utilitários duplicados entre módulos (`Mensalidade`, `Responsavel`, `getApiErrorMessage`, `ApiClient`)
+- Padronização visual das telas de Mensalidades e Graduações (não usavam CSS real)
+
+---
+
+# Próximas versões
 
 ## 1.0.0
 
@@ -313,3 +387,20 @@ Ele passou a centralizar:
 - frequência
 - financeiro
 - competições
+
+---
+
+## 0.9.0-alpha
+Fechamento de módulos pendentes e correções críticas.
+
+- Segurança: rota de cadastro de usuário deixou de ser pública
+- Prontuário: tela linkada na navegação (já existia, estava órfã)
+- Usuários: tela completa de administração (cadastro, perfil, ativação)
+- Competições: cadastro, inscrição de atletas e registro de resultado
+- Relatórios: geração de texto (financeiro, ranking, aniversariantes, evolução, comportamental)
+- Dashboard: reorganizado em seções, alertas de mensalidades vencidas, próximas graduações
+- Financeiro: tela de caixa e inadimplência
+- Planejamento Pedagógico: cadastro de módulos, aulas planejadas, técnicas sugeridas e jogos
+- Correção de bug crítico que impedia o carregamento da aplicação
+- Consolidação de código e tipos duplicados entre módulos
+- Padronização visual das telas de Mensalidades e Graduações

@@ -561,15 +561,43 @@ Movimentação
 
 ## Curriculo
 
-Organização pedagógica.
+Organização pedagógica, dividida em quatro níveis.
+
+Currículo
 
 Campos
 
 id
 
-titulo
+nome
 
-modulo
+descricao
+
+modalidade
+
+publico
+
+ativo
+
+createdAt
+
+updatedAt
+
+---
+
+Módulo do Currículo (ModuloCurriculo)
+
+Agrupa aulas planejadas por faixa etária/faixa de graduação.
+
+Campos
+
+id
+
+nome
+
+descricao
+
+faixa
 
 idadeMinima
 
@@ -577,9 +605,65 @@ idadeMaxima
 
 ordem
 
-ativo
+curriculoId
 
 createdAt
+
+updatedAt
+
+---
+
+Aula do Currículo (AulaCurriculo)
+
+Plano de aula: o que ensinar, com qual objetivo e quais jogos pedagógicos usar.
+
+Campos
+
+id
+
+titulo
+
+objetivo
+
+descricao
+
+duracaoMinutos
+
+jogosSugeridos
+
+ordem
+
+moduloId
+
+createdAt
+
+updatedAt
+
+---
+
+Técnica Sugerida (TecnicaCurriculo)
+
+Técnicas recomendadas para uma aula planejada específica.
+
+Campos
+
+id
+
+nome
+
+categoria
+
+descricao
+
+obrigatoria
+
+ordem
+
+aulaCurriculoId
+
+createdAt
+
+updatedAt
 
 ---
 

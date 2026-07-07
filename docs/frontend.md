@@ -527,9 +527,11 @@ login
 
 /alunos
 
-/alunos/novo
+/alunos/cadastro
 
 /alunos/:id
+
+/alunos/:id/editar
 
 /alunos/:id/prontuario
 
@@ -538,6 +540,22 @@ login
 /aulas
 
 /mensalidades
+
+/graduacoes
+
+/graduacoes/proximas
+
+/financeiro
+
+/competicoes
+
+/competicoes/:id
+
+/relatorios
+
+/planejamento
+
+/usuarios
 
 ```
 

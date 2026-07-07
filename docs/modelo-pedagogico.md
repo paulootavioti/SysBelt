@@ -104,7 +104,13 @@ Preparar alunos para:
 
 # Organização por Faixa Etária
 
-## 5 a 6 anos
+O SGCL organiza os alunos em quatro categorias.
+
+## Infantil (4 a 14 anos)
+
+Dividida em duas turmas, que podem compartilhar o mesmo horário de aula dependendo da quantidade de alunos matriculados.
+
+### Turma Kids — 4 a 9 anos
 
 Objetivos
 
@@ -112,42 +118,25 @@ Objetivos
 - coordenação motora
 - disciplina
 - socialização
-
-Tempo sugerido
-
-50% jogos
-
-30% técnica
-
-20% lutas
-
----
-
-## 7 a 9 anos
-
-Objetivos
-
 - consolidação das bases
-- entendimento das posições
-- introdução ao sistema de pontos
 
 Tempo sugerido
 
-40% jogos
+45% jogos
 
-40% técnica
+35% técnica
 
 20% lutas
 
----
-
-## 10 a 12 anos
+### Turma Teens — 10 a 14 anos
 
 Objetivos
 
 - desenvolvimento técnico
 - estratégia
 - controle emocional
+- preparação para faixa azul
+- competição
 
 Tempo sugerido
 
@@ -157,23 +146,13 @@ Tempo sugerido
 
 25% sparring
 
----
+## Juvenil (15 a 17 anos)
 
-## 13 e 14 anos
+Já integra a trilha de faixas adulta (ver "Sistema de Graduação"), respeitando as idades mínimas de cada faixa. Na prática, a maioria dos alunos juvenis permanece na faixa Branca até completar 16 anos.
 
-Objetivos
+## Adulto (18 anos ou mais)
 
-- preparação para faixa azul
-- competição
-- autonomia
-
-Tempo sugerido
-
-15% jogos
-
-55% técnica
-
-30% treino específico
+Trilha de faixas: Branca, Azul, Roxa, Marrom, Preta — com idade mínima e tempo de permanência definidos por faixa (ver "Sistema de Graduação").
 
 ---
 
@@ -407,6 +386,34 @@ Laranja
 Laranja e Preta
 
 Verde
+
+Essa sequência vale para as turmas Kids e Teens (Infantil).
+
+## Trilha Juvenil e Adulta
+
+A partir do Juvenil (15 anos), o aluno passa a evoluir em uma trilha própria, independente da trilha infantil:
+
+Branca
+
+↓ (mínimo 16 anos, tempo médio de 2 anos na faixa)
+
+Azul
+
+↓ (mínimo 16 anos, tempo médio de 2 anos na faixa)
+
+Roxa
+
+↓ (mínimo 18 anos, mínimo 1 ano e meio na faixa roxa)
+
+Marrom
+
+↓ (mínimo 19 anos)
+
+Preta
+
+Os graus dentro de cada faixa seguem a mesma regra da trilha infantil (8 aulas = 1 grau, 4 graus = elegível para troca de faixa), mas a troca de faixa também exige atingir a idade mínima e o tempo de permanência definidos acima.
+
+
 
 ---
 

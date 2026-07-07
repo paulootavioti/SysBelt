@@ -449,6 +449,15 @@ Valores novos
 
 ---
 
+# Histórico de Correções de Segurança
+
+## Julho/2026
+
+- **Cadastro de usuário público**: a rota `POST /auth/register` não exigia autenticação nem perfil, permitindo que qualquer pessoa criasse uma conta com perfil ADMIN. Corrigido para exigir `ensureAuthenticated` + `ensureRole(["ADMIN"])`.
+- **Financeiro restrito indevidamente**: `GET /financeiro/resumo` aceitava apenas ADMIN, contrariando esta própria documentação (que define RECEPÇÃO com acesso a Financeiro). Corrigido para `ensureRole(["ADMIN", "RECEPCAO"])`.
+
+---
+
 # Upload de Arquivos
 
 Planejamento futuro.

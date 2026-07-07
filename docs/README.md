@@ -346,7 +346,7 @@ Atualmente o sistema possui os seguintes módulos.
 Versão
 
 ```
-0.7.0-alpha
+0.9.0-alpha
 ```
 
 Situação
@@ -359,14 +359,12 @@ Desenvolvimento ativo
 
 # Próximas funcionalidades
 
-- Prontuário completo
-- Planejamento da aula
-- Evolução técnica
-- Dashboard executivo
-- Financeiro completo
+- Evolução técnica avançada
+- Financeiro completo (PIX)
 - WhatsApp
-- Relatórios PDF
-- Ranking de competições
+- Relatórios em PDF/Excel
+- Ranking, medalhas e estatísticas de competições
+- Certificados automáticos de graduação
 
 ---
 

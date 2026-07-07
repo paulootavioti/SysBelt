@@ -593,6 +593,18 @@ PUT
 
 /curriculos/:id
 
+POST
+
+/curriculos/modulos
+
+POST
+
+/curriculos/aulas
+
+POST
+
+/curriculos/tecnicas
+
 ---
 
 # Competições
@@ -748,8 +760,6 @@ Próximos endpoints
 Área dos Pais
 
 Área do Professor
-
-Dashboard Executivo
 
 WhatsApp
 

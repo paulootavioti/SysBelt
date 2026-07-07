@@ -2,24 +2,17 @@
 
 ## 1. Objetivo
 
-Organizar a evolução técnica, comportamental e pedagógica dos alunos kids de 5 a 14 anos, permitindo que o SGCL acompanhe presença, comportamento, técnicas aprendidas e critérios de graduação.
+Organizar a evolução técnica, comportamental e pedagógica dos alunos do Infantil (4 a 14 anos), permitindo que o SGCL acompanhe presença, comportamento, técnicas aprendidas e critérios de graduação.
 
 ## 2. Divisão por idade
 
-### Kids I — 5 a 6 anos
-Foco: coordenação motora, disciplina, atenção, base corporal e adaptação ao tatame.
+### Turma Kids — 4 a 9 anos
+Foco: coordenação motora, disciplina, atenção, base corporal, adaptação ao tatame e fundamentos básicos.
 
-### Kids II — 7 a 8 anos
-Foco: fundamentos básicos, guarda, quedas simples, raspagens e noções de pontuação.
+### Turma Teens — 10 a 14 anos
+Foco: controle corporal, defesa, ataque, posições dominantes, transições, estratégia, combinações técnicas e preparação competitiva.
 
-### Kids III — 9 a 10 anos
-Foco: controle corporal, defesa, ataque, posições dominantes e transições.
-
-### Infanto — 11 a 12 anos
-Foco: estratégia, combinações técnicas, finalizações controladas e competição.
-
-### Juvenil — 13 a 14 anos
-Foco: refinamento técnico, intensidade, regras, tomada de decisão e preparação competitiva.
+As turmas Kids e Teens podem compartilhar o mesmo horário de aula, dependendo da quantidade de alunos matriculados em cada uma.
 
 ## 3. Graduação técnica
 

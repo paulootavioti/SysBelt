@@ -19,17 +19,7 @@ Separar responsabilidades entre API e interface, facilitando manutenção, deplo
 
 O backend expõe uma API REST e o frontend consome essa API via Axios.
 
-# ADR-001
-
-Arquitetura Modular
-
-Motivo:
-
-Separar responsabilidades por domínio.
-
-Status:
-
-Aceito.
+Status: Aceito.
 
 ---
 
@@ -49,9 +39,7 @@ Permitir autenticação stateless, compatível com aplicações web modernas.
 
 Todas as rotas protegidas exigem token no header Authorization.
 
-ADR-002
-
-React Hook Form
+Status: Aceito.
 
 ---
 
@@ -75,9 +63,7 @@ Cada usuário deve acessar apenas as funcionalidades compatíveis com sua funç�
 
 As rotas usam middlewares de autenticação e autorização.
 
-ADR-003
-
-ApiClient
+Status: Aceito.
 
 ---
 
@@ -97,9 +83,7 @@ A faixa representa evolução técnica e deve ser controlada pelo módulo de Gra
 
 O endpoint de edição do aluno atualiza apenas dados cadastrais.
 
-ADR-004
-
-Design System próprio
+Status: Aceito.
 
 ---
 
@@ -119,6 +103,84 @@ Garantir consistência visual, reduzir duplicação de código e facilitar evolu
 
 Novas telas devem priorizar componentes reutilizáveis antes de CSS inline.
 
-ADR-005
+Status: Aceito.
 
-Services por módulo
+---
+
+## ADR-006 — Arquitetura modular por domínio
+
+Data: 25/06/2026
+
+### Decisão
+
+Backend e frontend são organizados em módulos por domínio de negócio (alunos, aulas, mensalidades, graduações, etc.), cada um com sua própria pasta autocontida.
+
+### Motivação
+
+Separar responsabilidades por domínio, facilitando localizar e evoluir cada funcionalidade sem impactar as demais.
+
+### Impacto
+
+Cada módulo do backend segue o padrão `controller.ts` / `routes.ts` / `services/`; cada módulo do frontend segue `pages/` / `components/` / `services/` / `hooks/` / `types/` / `schema/`.
+
+Status: Aceito.
+
+---
+
+## ADR-007 — React Hook Form + Zod para formulários
+
+Data: 25/06/2026
+
+### Decisão
+
+Todos os formulários do frontend usam React Hook Form para controle de estado e Zod para validação, via `zodResolver`.
+
+### Motivação
+
+Padronizar validação e reduzir boilerplate de formulários controlados manualmente.
+
+### Impacto
+
+Todo formulário novo deve seguir o padrão `useForm` + `FormProvider` + schema Zod dedicado.
+
+Status: Aceito.
+
+---
+
+## ADR-008 — Camada de Service/ApiClient no frontend
+
+Data: 25/06/2026
+
+### Decisão
+
+Nenhuma página ou componente chama axios/fetch diretamente; toda chamada HTTP passa por uma classe Service do módulo, que por sua vez usa o ApiClient compartilhado.
+
+### Motivação
+
+Isolar a página da forma como os dados são buscados, facilitando troca de implementação e testes.
+
+### Impacto
+
+Páginas dependem apenas de `Service.metodo()`; o ApiClient centraliza o tratamento de resposta do Axios.
+
+Status: Aceito.
+
+---
+
+## ADR-009 — Regra de negócio apenas em Services (backend)
+
+Data: 25/06/2026
+
+### Decisão
+
+Controllers do backend não contêm lógica de negócio; toda regra fica em uma classe Service dedicada por ação.
+
+### Motivação
+
+Manter Controllers finos (apenas leem request e devolvem response), facilitando reuso e teste da lógica de negócio isoladamente.
+
+### Impacto
+
+Cada ação de Controller instancia e chama um XxxService, nunca acessa o Prisma diretamente.
+
+Status: Aceito.

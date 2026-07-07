@@ -262,39 +262,41 @@ Todo histórico permanece registrado.
 
 ---
 
+## RN-064
+A troca de faixa na trilha Juvenil/Adulta exige idade mínima por faixa: Azul e Roxa (16 anos), Marrom (18 anos), Preta (19 anos) — além dos 4 graus.
+
+---
+
+## RN-065
+A troca de faixa na trilha Juvenil/Adulta também exige tempo mínimo de permanência na faixa atual: aproximadamente 2 anos para Azul e Roxa, 1 ano e meio na faixa Roxa antes da Marrom.
+
+---
+
 # Faixas
 
-A sequência oficial utilizada pelo sistema é:
+O sistema utiliza duas trilhas de faixa, conforme a categoria do aluno.
+
+## Trilha Infantil (Kids e Teens, até 14 anos)
 
 Branca
-
 Cinza e Branca
-
 Cinza
-
 Cinza e Preta
-
 Amarela e Branca
-
 Amarela
-
 Amarela e Preta
-
 Laranja e Branca
-
 Laranja
-
 Laranja e Preta
-
 Verde
 
-Azul
+## Trilha Juvenil/Adulta (a partir de 15 anos)
 
-Roxa
-
-Marrom
-
-Preta
+Branca (sem idade mínima)
+Azul (mínimo 16 anos)
+Roxa (mínimo 16 anos)
+Marrom (mínimo 18 anos)
+Preta (mínimo 19 anos)
 
 ---
 
