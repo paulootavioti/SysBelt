@@ -12,6 +12,8 @@ import { Aulas } from "../modules/aulas/pages/Listar";
 import { ChamadaAula } from "../modules/aulas/pages/Chamada";
 import { ProntuarioAluno } from "../modules/alunos/pages/Prontuario";
 
+import { ProgramacaoAulas } from "../modules/aulas/pages/Programacao";
+
 import { ListarMensalidades } from "../modules/mensalidades/pages/Listar";
 import { DetalheMensalidade } from "../modules/mensalidades/pages/Detalhes";
 import { NovaMensalidade } from "../modules/mensalidades/pages/Detalhes/novo";
@@ -218,6 +220,15 @@ export function AppRoutes() {
         element={
           <PrivateRoute>
             <DetalheTurma />
+          </PrivateRoute>
+        }
+      />
+
+      <Route
+        path="/aulas/programacao"
+        element={
+          <PrivateRoute>
+            <ProgramacaoAulas />
           </PrivateRoute>
         }
       />

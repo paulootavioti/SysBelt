@@ -339,6 +339,22 @@ Início do módulo de mensalidades.
 
 ---
 
+## Aulas e Planejamento Pedagógico
+
+### Adicionado
+
+- Turma agora pode ser vinculada a um Currículo
+- Ao iniciar uma aula, o professor pode escolher qual "aula do currículo" (plano de aula) está sendo aplicada
+- Tela de Chamada exibe o plano de aula do dia (objetivo, jogos sugeridos, técnicas sugeridas) quando houver
+- Programação prévia de aulas: agendar turma + plano de aula + data/horário com antecedência, e iniciar a aula (com chamada) diretamente a partir do agendamento
+- Fluxo de "Iniciar Aula" na tela de Aulas passou a funcionar de verdade (antes era um botão sem ação)
+
+### Alterado
+
+- Avaliação comportamental (Respeito, Valentia, Esforço, Atenção, Disciplina) agora só é exibida e aceita para alunos de até 14 anos, alinhado com a trilha Infantil
+
+---
+
 ## Correções gerais
 
 ### Corrigido

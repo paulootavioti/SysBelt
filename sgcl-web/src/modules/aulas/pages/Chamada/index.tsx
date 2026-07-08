@@ -104,6 +104,36 @@ export function ChamadaAula() {
             value={<StatusBadge status={aula.status} />}
           />
         </div>
+        
+        {aula.aulaCurriculo && (
+        <Section
+          title="Plano de Aula"
+          description={aula.aulaCurriculo.titulo}
+        >
+          <div className="chamada-plano">
+            {aula.aulaCurriculo.objetivo && (
+              <p><strong>🎯 Objetivo:</strong> {aula.aulaCurriculo.objetivo}</p>
+            )}
+
+            {aula.aulaCurriculo.jogosSugeridos && (
+              <p><strong>🎮 Jogos sugeridos:</strong> {aula.aulaCurriculo.jogosSugeridos}</p>
+            )}
+
+            {aula.aulaCurriculo.tecnicas.length > 0 && (
+              <div className="chamada-plano-tecnicas">
+                <strong>Técnicas sugeridas:</strong>
+                <div className="chamada-plano-tecnicas-lista">
+                  {aula.aulaCurriculo.tecnicas.map((tecnica) => (
+                    <span key={tecnica.id} className="chamada-plano-tecnica">
+                      {tecnica.nome}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </Section>
+      )}
 
     <Section
       title="Chamada"

@@ -31,6 +31,24 @@ aulasRoutes.patch(
   controller.finalizar
 );
 
+aulasRoutes.post(
+  "/programadas",
+  ensureAuthenticated,
+  controller.criarProgramada
+);
+
+aulasRoutes.get(
+  "/programadas",
+  ensureAuthenticated,
+  controller.listarProgramadas
+);
+
+aulasRoutes.patch(
+  "/programadas/:id/iniciar",
+  ensureAuthenticated,
+  controller.iniciarProgramada
+);
+
 aulasRoutes.get(
   "/:id",
   ensureAuthenticated,

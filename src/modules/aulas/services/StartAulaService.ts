@@ -3,6 +3,7 @@ import { AppError } from "../../../shared/errors/AppError";
 
 interface StartAulaDTO {
   turmaId: number;
+  aulaCurriculoId?: number;
   professor?: string;
   observacoes?: string;
 }
@@ -48,10 +49,21 @@ export class StartAulaService {
       );
     }
 
+    if (data.aulaCurriculoId) {
+      const aulaCurriculo = await prisma.aulaCurriculo.findUnique({
+        where: { id: data.aulaCurriculoId },
+      });
+
+      if (!aulaCurriculo) {
+        throw new AppError("Aula do currículo não encontrada.");
+      }
+    }
+
     const aula = await prisma.aula.create({
       data: {
         data: new Date(),
         turmaId: data.turmaId,
+        aulaCurriculoId: data.aulaCurriculoId,
         professor: data.professor,
         observacoes: data.observacoes,
         status: "ABERTA",
@@ -65,6 +77,11 @@ export class StartAulaService {
       },
       include: {
         turma: true,
+        aulaCurriculo: {
+          include: {
+            tecnicas: true,
+          },
+        },
         alunos: {
           include: {
             aluno: true,

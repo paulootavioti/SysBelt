@@ -1,5 +1,6 @@
 import { prisma } from "../../../shared/database/prisma";
 import { AppError } from "../../../shared/errors/AppError";
+import { calcularIdade } from "../../../shared/constants/faixas";
 
 interface UpdateAulaAlunoDTO {
   id: number;
@@ -15,6 +16,14 @@ interface UpdateAulaAlunoDTO {
   observacao?: string | null;
 }
 
+const CAMPOS_COMPORTAMENTO = [
+  "respeito",
+  "valentia",
+  "esforco",
+  "atencao",
+  "disciplina",
+] as const;
+
 export class UpdateAulaAlunoService {
   async execute(data: UpdateAulaAlunoDTO) {
     const registro = await prisma.aulaAluno.findUnique({
@@ -23,6 +32,7 @@ export class UpdateAulaAlunoService {
       },
       include: {
         aula: true,
+        aluno: true,
       },
     });
 
@@ -33,6 +43,18 @@ export class UpdateAulaAlunoService {
     if (registro.aula.status === "FINALIZADA") {
       throw new AppError(
         "Não é possível alterar uma aula finalizada."
+      );
+    }
+
+    const idade = calcularIdade(registro.aluno.dataNascimento);
+
+    const tentandoAlterarComportamento = CAMPOS_COMPORTAMENTO.some(
+      (campo) => data[campo] !== undefined
+    );
+
+    if (idade > 14 && tentandoAlterarComportamento) {
+      throw new AppError(
+        "Avaliação comportamental disponível apenas para alunos até 14 anos."
       );
     }
 

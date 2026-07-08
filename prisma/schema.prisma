@@ -214,8 +214,12 @@ model Turma {
 
   ativo         Boolean  @default(true)
 
+  curriculoId   Int?
+  curriculo     Curriculo? @relation(fields: [curriculoId], references: [id])
+
   alunos        Aluno[]
   aulas         Aula[]
+  aulasProgramadas AulaProgramada[]
 
   createdAt     DateTime @default(now())
 
@@ -245,6 +249,10 @@ model Aula {
 
   turmaId     Int?
   turma       Turma?    @relation(fields: [turmaId], references: [id])
+
+  aulaCurriculoId Int?
+  aulaCurriculo   AulaCurriculo? @relation(fields: [aulaCurriculoId], references: [id])
+  programacao AulaProgramada? 
 
   alunos      AulaAluno[]
 
@@ -288,6 +296,7 @@ model Curriculo {
   ativo       Boolean  @default(true)
 
   modulos     ModuloCurriculo[]
+  turmas      Turma[]
 
   createdAt   DateTime @default(now())
   updatedAt   DateTime @default(now()) @updatedAt
@@ -322,7 +331,6 @@ model AulaCurriculo {
   descricao       String?
   duracaoMinutos  Int?
   jogosSugeridos  String?
-  
 
   ordem           Int      @default(0)
 
@@ -330,6 +338,8 @@ model AulaCurriculo {
   modulo          ModuloCurriculo @relation(fields: [moduloId], references: [id])
 
   tecnicas        TecnicaCurriculo[]
+  aulasRealizadas Aula[]
+  programacoes    AulaProgramada[]
 
   createdAt       DateTime @default(now())
   updatedAt       DateTime @default(now()) @updatedAt
@@ -347,6 +357,27 @@ model TecnicaCurriculo {
 
   aulaCurriculoId Int
   aulaCurriculo   AulaCurriculo @relation(fields: [aulaCurriculoId], references: [id])
+
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @default(now()) @updatedAt
+}
+
+model AulaProgramada {
+  id              Int      @id @default(autoincrement())
+
+  turmaId         Int
+  turma           Turma    @relation(fields: [turmaId], references: [id])
+
+  aulaCurriculoId Int?
+  aulaCurriculo   AulaCurriculo? @relation(fields: [aulaCurriculoId], references: [id])
+
+  data            DateTime
+  observacoes     String?
+
+  status          String   @default("PENDENTE")
+
+  aulaId          Int?     @unique
+  aula            Aula?    @relation(fields: [aulaId], references: [id])
 
   createdAt       DateTime @default(now())
   updatedAt       DateTime @default(now()) @updatedAt

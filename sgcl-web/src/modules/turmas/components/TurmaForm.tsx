@@ -1,11 +1,16 @@
+import { useEffect, useState } from "react";
 import { useForm, FormProvider } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { Input } from "../../../components/ui/Input";
+import { Select } from "../../../components/ui/Select";
 import { Button } from "../../../components/ui/Button";
 import { ErrorMessage } from "../../../components/ui/ErrorMessage";
 import { FormGrid } from "../../../components/ui/FormGrid";
 import { FormGridItem } from "../../../components/ui/FormGridItem";
+
+import type { Curriculo } from "../../curriculos/types/curriculo";
+import { CurriculoService } from "../../curriculos/services/CurriculoService";
 
 import { turmaSchema, type TurmaFormData } from "../schema/turma.schema";
 
@@ -15,6 +20,8 @@ interface TurmaFormProps {
 }
 
 export function TurmaForm({ loading = false, onSubmit }: TurmaFormProps) {
+  const [curriculos, setCurriculos] = useState<Curriculo[]>([]);
+
   const methods = useForm<TurmaFormData>({
     resolver: zodResolver(turmaSchema),
     defaultValues: {
@@ -24,10 +31,15 @@ export function TurmaForm({ loading = false, onSubmit }: TurmaFormProps) {
       horarioInicio: "",
       horarioFim: "",
       professor: "",
+      curriculoId: "",
     },
   });
 
   const { register, handleSubmit, formState: { errors } } = methods;
+
+  useEffect(() => {
+    CurriculoService.listar().then(setCurriculos);
+  }, []);
 
   return (
     <FormProvider {...methods}>
@@ -61,6 +73,14 @@ export function TurmaForm({ loading = false, onSubmit }: TurmaFormProps) {
           <FormGridItem>
             <Input label="Horário de Término" type="time" {...register("horarioFim")} />
             <ErrorMessage message={errors.horarioFim?.message ?? ""} />
+          </FormGridItem>
+
+          <FormGridItem span={2}>
+            <Select
+              label="Currículo (opcional)"
+              options={curriculos.map((curriculo) => ({ label: curriculo.nome, value: String(curriculo.id) }))}
+              {...register("curriculoId")}
+            />
           </FormGridItem>
         </FormGrid>
 

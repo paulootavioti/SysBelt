@@ -6,6 +6,10 @@ import { GetAulaService } from "./services/GetAulaService";
 import { FinalizarAulaService } from "./services/FinalizarAulaService";
 import { UpdateAulaAlunoService } from "./services/UpdateAulaAlunoService";
 
+import { CreateAulaProgramadaService } from "./services/CreateAulaProgramadaService";
+import { ListAulasProgramadasService } from "./services/ListAulasProgramadasService";
+import { IniciarAulaProgramadaService } from "./services/IniciarAulaProgramadaService";
+
 export class AulasController {
   async create(req: Request, res: Response) {
     const service = new StartAulaService();
@@ -50,5 +54,29 @@ export class AulasController {
     });
   
     return res.json(registro);
+  }
+
+  async criarProgramada(req: Request, res: Response) {
+    const service = new CreateAulaProgramadaService();
+
+    const programacao = await service.execute(req.body);
+
+    return res.status(201).json(programacao);
+  }
+
+  async listarProgramadas(req: Request, res: Response) {
+    const service = new ListAulasProgramadasService();
+
+    const programacoes = await service.execute();
+
+    return res.json(programacoes);
+  }
+
+  async iniciarProgramada(req: Request, res: Response) {
+    const service = new IniciarAulaProgramadaService();
+
+    const aula = await service.execute(Number(req.params.id));
+
+    return res.json(aula);
   }
 }

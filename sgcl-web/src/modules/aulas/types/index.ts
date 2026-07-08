@@ -4,6 +4,23 @@ export interface TurmaResumo {
   professor: string;
 }
 
+export interface TecnicaAulaCurriculo {
+  id: number;
+  nome: string;
+  categoria?: string | null;
+  obrigatoria: boolean;
+}
+
+export interface AulaCurriculoResumo {
+  id: number;
+  titulo: string;
+  objetivo?: string | null;
+  descricao?: string | null;
+  duracaoMinutos?: number | null;
+  jogosSugeridos?: string | null;
+  tecnicas: TecnicaAulaCurriculo[];
+}
+
 export interface AulaAluno {
   id: number;
   aulaId: number;
@@ -24,6 +41,7 @@ export interface AulaAluno {
     nome: string;
     faixa: string;
     grau: number;
+    dataNascimento: string;
   };
 }
 
@@ -35,6 +53,18 @@ export interface Aula {
   status: "ABERTA" | "FINALIZADA";
 
   turma?: TurmaResumo | null;
+  aulaCurriculo?: AulaCurriculoResumo | null;
 
   alunos: AulaAluno[];
+}
+export interface AulaProgramada {
+  id: number;
+  turmaId: number;
+  turma: TurmaResumo;
+  aulaCurriculoId?: number | null;
+  aulaCurriculo?: AulaCurriculoResumo | null;
+  data: string;
+  observacoes?: string | null;
+  status: "PENDENTE" | "INICIADA" | "CANCELADA";
+  aulaId?: number | null;
 }

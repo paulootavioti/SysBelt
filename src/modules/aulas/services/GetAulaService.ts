@@ -9,6 +9,11 @@ export class GetAulaService {
       },
       include: {
         turma: true,
+        aulaCurriculo: {
+          include: {
+            tecnicas: true,
+          },
+        },
         alunos: {
           include: {
             aluno: true,

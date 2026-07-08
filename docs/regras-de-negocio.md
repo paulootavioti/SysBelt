@@ -272,6 +272,12 @@ A troca de faixa na trilha Juvenil/Adulta também exige tempo mínimo de perman�
 
 ---
 
+## RN-066
+
+A avaliação comportamental (Respeito, Valentia, Esforço, Atenção, Disciplina) é aplicável somente a alunos com até 14 anos (trilha Infantil).
+
+---
+
 # Faixas
 
 O sistema utiliza duas trilhas de faixa, conforme a categoria do aluno.

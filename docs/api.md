@@ -501,7 +501,17 @@ Body
 }
 
 ```
+POST
 
+/aulas/programadas
+
+GET
+
+/aulas/programadas
+
+PATCH
+
+/aulas/programadas/:id/iniciar
 ---
 
 ## Finalizar aula

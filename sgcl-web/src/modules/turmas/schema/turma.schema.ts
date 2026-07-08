@@ -7,6 +7,7 @@ export const turmaSchema = z.object({
   horarioInicio: z.string().min(1, "Informe o horário de início."),
   horarioFim: z.string().min(1, "Informe o horário de término."),
   professor: z.string().min(2, "Informe o professor."),
+  curriculoId: z.string().optional(),
 });
 
 export type TurmaFormData = z.infer<typeof turmaSchema>;

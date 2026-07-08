@@ -7,6 +7,11 @@ export interface Turma {
   horarioFim: string;
   professor: string;
   ativo: boolean;
+  curriculoId?: number | null;
+  curriculo?: {
+    id: number;
+    nome: string;
+  } | null;
   createdAt: string;
 }
 

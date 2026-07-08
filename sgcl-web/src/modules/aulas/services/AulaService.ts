@@ -1,9 +1,10 @@
 import { api } from "../../../services/api";
 
-import type { Aula, AulaAluno } from "../types";
+import type { Aula, AulaAluno, AulaProgramada } from "../types";
 
 interface StartAulaData {
   turmaId: number;
+  aulaCurriculoId?: number;
   professor?: string;
   observacoes?: string;
 }
@@ -54,6 +55,36 @@ export class AulaService {
   static async finalizar(id: number) {
     const response = await api.patch<Aula>(
       `/aulas/${id}/finalizar`
+    );
+
+    return response.data;
+  }
+
+  static async criarProgramada(data: {
+    turmaId: number;
+    aulaCurriculoId?: number;
+    data: string;
+    observacoes?: string;
+  }) {
+    const response = await api.post<AulaProgramada>(
+      "/aulas/programadas",
+      data
+    );
+
+    return response.data;
+  }
+
+  static async listarProgramadas() {
+    const response = await api.get<AulaProgramada[]>(
+      "/aulas/programadas"
+    );
+
+    return response.data;
+  }
+
+  static async iniciarProgramada(id: number) {
+    const response = await api.patch<Aula>(
+      `/aulas/programadas/${id}/iniciar`
     );
 
     return response.data;

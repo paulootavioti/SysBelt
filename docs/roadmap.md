@@ -205,6 +205,8 @@ Status
 - Abrir aula
 - Chamada
 - Encerrar aula
+- Vínculo com plano de aula do currículo
+- Programação prévia de aulas
 
 ---
 

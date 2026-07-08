@@ -161,6 +161,8 @@ ativo
 
 createdAt
 
+curriculoId
+
 ---
 
 Relacionamentos
@@ -364,6 +366,8 @@ observacoes
 status
 
 createdAt
+
+aulaCurriculoId
 
 ---
 
@@ -674,6 +678,32 @@ Currículo
 ↓
 
 Técnicas
+
+---
+
+## AulaProgramada
+
+Agendamento prévio de uma aula, antes dela acontecer de fato.
+
+Campos
+
+id
+
+turmaId
+
+aulaCurriculoId (opcional — plano de aula a ser seguido)
+
+data
+
+observacoes
+
+status (PENDENTE, INICIADA, CANCELADA)
+
+aulaId (preenchido quando a programação vira uma aula real)
+
+createdAt
+
+updatedAt
 
 ---
 

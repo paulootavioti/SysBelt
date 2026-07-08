@@ -12,7 +12,10 @@ export class TurmaService {
   }
 
   static async criar(data: TurmaFormData) {
-    return ApiClient.post<Turma>("/turmas", data);
+    return ApiClient.post<Turma>("/turmas", {
+      ...data,
+      curriculoId: data.curriculoId ? Number(data.curriculoId) : undefined,
+    });
   }
 
   static async alterarStatus(id: number) {

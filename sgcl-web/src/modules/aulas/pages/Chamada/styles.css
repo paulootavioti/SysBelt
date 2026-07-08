@@ -10,3 +10,25 @@
     grid-template-columns: 1fr;
   }
 }
+
+.chamada-plano {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.chamada-plano-tecnicas-lista {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  margin-top: var(--space-1);
+}
+
+.chamada-plano-tecnica {
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: var(--font-sm);
+  color: var(--text);
+}

@@ -1,5 +1,6 @@
 import { Checkbox } from "../../../../components/ui/Checkbox";
 import { BehaviorSelector } from "../BehaviorSelector";
+import { calcularIdade } from "../../../../shared/formatters/data";
 
 import type { AulaAlunoCardProps } from "./types";
 
@@ -10,6 +11,9 @@ export function AulaAlunoCard({
   aulaFinalizada,
   onChange,
 }: AulaAlunoCardProps) {
+  const idade = calcularIdade(registro.aluno.dataNascimento);
+  const avaliaComportamento = idade !== null && idade <= 14;
+
   return (
     <article className="aula-aluno-card">
       <header className="aula-aluno-card-header">
@@ -34,21 +38,23 @@ export function AulaAlunoCard({
         />
       </header>
 
-      <BehaviorSelector
-        disabled={aulaFinalizada}
-        values={{
-          respeito: registro.respeito,
-          valentia: registro.valentia,
-          esforco: registro.esforco,
-          atencao: registro.atencao,
-          disciplina: registro.disciplina,
-        }}
-        onChange={(field, value) =>
-          onChange(registro, {
-            [field]: value,
-          })
-        }
-      />
+      {avaliaComportamento && (
+        <BehaviorSelector
+          disabled={aulaFinalizada}
+          values={{
+            respeito: registro.respeito,
+            valentia: registro.valentia,
+            esforco: registro.esforco,
+            atencao: registro.atencao,
+            disciplina: registro.disciplina,
+          }}
+          onChange={(field, value) =>
+            onChange(registro, {
+              [field]: value,
+            })
+          }
+        />
+      )}
     </article>
   );
 }

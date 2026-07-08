@@ -50,6 +50,10 @@ export function Layout({
           📅 Aulas
         </Link>
 
+        <Link to="/aulas/programacao">
+          🗓️ Programação de Aulas
+        </Link>
+
         <Link to="/planejamento">
           📘 Planejamento Pedagógico
         </Link>
