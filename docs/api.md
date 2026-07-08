@@ -431,6 +431,7 @@ PATCH
 
 /turmas/:id/ativo
 
+
 ---
 
 # Aulas

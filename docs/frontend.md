@@ -537,6 +537,8 @@ login
 
 /turmas
 
+/turmas/:id 
+
 /aulas
 
 /mensalidades

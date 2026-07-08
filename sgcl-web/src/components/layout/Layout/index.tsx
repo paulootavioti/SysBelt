@@ -42,6 +42,10 @@ export function Layout({
           👦 Alunos
         </Link>
 
+        <Link to="/turmas">
+          🏫 Turmas
+        </Link>
+
         <Link to="/aulas">
           📅 Aulas
         </Link>

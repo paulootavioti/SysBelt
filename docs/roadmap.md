@@ -168,7 +168,7 @@ Status
 
 ---
 
-## Turmas
+### Turmas
 
 Status
 
@@ -177,6 +177,8 @@ Status
 - Cadastro
 - Professor
 - Horários
+- Vínculo de alunos
+- Ativação/inativação
 
 ---
 

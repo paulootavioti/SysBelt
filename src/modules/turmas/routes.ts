@@ -36,4 +36,11 @@ turmasRoutes.patch(
   turmasController.vincularAluno
 );
 
+turmasRoutes.patch(
+  "/:id/ativo",
+  ensureAuthenticated,
+  ensureRole(["ADMIN", "PROFESSOR", "RECEPCAO"]),
+  turmasController.toggleAtivo
+);
+
 export { turmasRoutes };

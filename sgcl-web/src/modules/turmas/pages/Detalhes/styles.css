@@ -1,0 +1,9 @@
+.turma-detalhe-voltar {
+  margin-bottom: var(--space-3);
+}
+
+.turma-detalhe-acoes {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: var(--space-4);
+}

@@ -5,6 +5,8 @@ import { ListTurmasService } from "./services/ListTurmasService";
 import { VincularAlunoTurmaService } from "./services/VincularAlunoTurmaService";
 import { GetTurmaDetalhadaService } from "./services/GetTurmaDetalhadaService";
 
+import { ToggleTurmaAtivoService } from "./services/ToggleTurmaAtivoService";
+
 export class TurmasController {
 
   async create(
@@ -76,6 +78,16 @@ export class TurmasController {
 
     return res.json(aluno);
 
+  }
+
+  async toggleAtivo(req: Request, res: Response) {
+    const { id } = req.params;
+
+    const service = new ToggleTurmaAtivoService();
+
+    const turma = await service.execute(Number(id));
+
+    return res.json(turma);
   }
 
 }

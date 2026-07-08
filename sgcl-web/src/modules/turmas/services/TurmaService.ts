@@ -1,14 +1,25 @@
-import { api } from "../../../services/api";
-
-export interface TurmaOption {
-  id: number;
-  nome: string;
-}
+import { ApiClient } from "../../../shared/api/ApiClient";
+import type { Turma, TurmaDetalhada } from "../types/turma";
+import type { TurmaFormData } from "../schema/turma.schema";
 
 export class TurmaService {
   static async listar() {
-    const response = await api.get<TurmaOption[]>("/turmas");
+    return ApiClient.get<Turma[]>("/turmas");
+  }
 
-    return response.data;
+  static async buscar(id: number) {
+    return ApiClient.get<TurmaDetalhada>(`/turmas/${id}`);
+  }
+
+  static async criar(data: TurmaFormData) {
+    return ApiClient.post<Turma>("/turmas", data);
+  }
+
+  static async alterarStatus(id: number) {
+    return ApiClient.patch<Turma>(`/turmas/${id}/ativo`);
+  }
+
+  static async vincularAluno(turmaId: number, alunoId: number) {
+    return ApiClient.patch(`/turmas/${turmaId}/alunos/${alunoId}`);
   }
 }

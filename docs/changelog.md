@@ -329,6 +329,16 @@ Início do módulo de mensalidades.
 
 ---
 
+## Turmas
+
+### Adicionado
+
+- Tela de gestão de turmas: cadastro, listagem, detalhe com alunos vinculados
+- Vincular aluno a uma turma pela interface
+- Ativar/inativar turma (endpoint que não existia)
+
+---
+
 ## Correções gerais
 
 ### Corrigido
@@ -340,6 +350,7 @@ Início do módulo de mensalidades.
 
 - Consolidação de tipos e utilitários duplicados entre módulos (`Mensalidade`, `Responsavel`, `getApiErrorMessage`, `ApiClient`)
 - Padronização visual das telas de Mensalidades e Graduações (não usavam CSS real)
+- Campo `jogosSugeridos` (Planejamento Pedagógico) havia sido removido do banco por engano durante um ajuste de configuração do Prisma; restaurado
 
 ---
 

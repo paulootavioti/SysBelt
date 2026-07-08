@@ -25,6 +25,9 @@ import { DetalheCompeticao } from "../modules/competicoes/pages/Detalhes";
 import { Curriculos } from "../modules/curriculos/pages/Listar";
 import { PrivateRoute } from "./PrivateRoute";
 
+import { Turmas } from "../modules/turmas/pages/Listar";
+import { DetalheTurma } from "../modules/turmas/pages/Detalhes";
+
 export function AppRoutes() {
   return (
     <Routes>
@@ -197,6 +200,24 @@ export function AppRoutes() {
         element={
           <PrivateRoute>
             <Curriculos />
+          </PrivateRoute>
+        }
+      />
+
+      <Route
+        path="/turmas"
+        element={
+          <PrivateRoute>
+            <Turmas />
+          </PrivateRoute>
+        }
+      />
+
+      <Route
+        path="/turmas/:id"
+        element={
+          <PrivateRoute>
+            <DetalheTurma />
           </PrivateRoute>
         }
       />
