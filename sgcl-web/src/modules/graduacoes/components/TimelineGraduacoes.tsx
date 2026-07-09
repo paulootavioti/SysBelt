@@ -1,46 +1,60 @@
-import type { Graduacao } from "../types";
+import { useState } from "react";
 import { CORES_FAIXA } from "../types";
 import { formatarData } from "../utils/helpers";
+import "./TimelineGraduacoes.css";
+
+interface GraduacaoTimelineItem {
+  id: number;
+  faixa: string;
+  data: string;
+}
 
 interface TimelineGraduacoesProps {
-  graduacoes: Graduacao[];
+  graduacoes: GraduacaoTimelineItem[];
 }
 
 export function TimelineGraduacoes({ graduacoes }: TimelineGraduacoesProps) {
-  const graduacoesOrdenadas = [...graduacoes].reverse();
+  const [agora] = useState(() => Date.now());
+
+  const graduacoesOrdenadas = [...graduacoes].sort(
+    (a, b) => new Date(b.data).getTime() - new Date(a.data).getTime()
+  );
+
+  if (graduacoesOrdenadas.length === 0) {
+    return <p className="timeline-vazia">Nenhuma graduação registrada.</p>;
+  }
 
   return (
-    <div className="space-y-4">
-      {graduacoesOrdenadas.length === 0 ? (
-        <p className="text-center text-gray-500 py-8">Nenhuma graduação registrada</p>
-      ) : (
-        <div className="space-y-3">
-          {graduacoesOrdenadas.map((grad, idx) => (
-            <div key={grad.id} className="flex gap-4">
-              {/* Timeline dot */}
-              <div className="flex flex-col items-center">
-                <div className={`w-4 h-4 rounded-full ${CORES_FAIXA[grad.faixa] || "bg-gray-400"} border-2 border-white shadow`} />
-                {idx < graduacoesOrdenadas.length - 1 && (
-                  <div className="w-1 h-12 bg-gray-300 my-2" />
-                )}
-              </div>
+    <div className="timeline-graduacoes">
+      {graduacoesOrdenadas.map((grad, idx) => {
+        const cor = CORES_FAIXA[grad.faixa];
+        const diasDesde = Math.floor((agora - new Date(grad.data).getTime()) / (1000 * 60 * 60 * 24));
 
-              {/* Content */}
-              <div className="pb-2 flex-1">
-                <div className="flex items-center justify-between">
-                  <h4 className="font-semibold text-gray-900">{grad.faixa}</h4>
-                  <span className="text-sm text-gray-600">
-                    {formatarData(grad.data)}
-                  </span>
-                </div>
-                <p className="text-sm text-gray-500">
-                  {idx === 0 ? "Faixa Atual" : `Conquistada há ${Math.floor((Date.now() - new Date(grad.data).getTime()) / (1000 * 60 * 60 * 24))} dias`}
-                </p>
-              </div>
+        return (
+          <div key={grad.id} className="timeline-item">
+            <div className="timeline-marcador">
+              <span
+                className="timeline-ponto"
+                style={{
+                  background: cor?.background ?? "#9CA3AF",
+                  border: grad.faixa === "Branca" ? "1px solid var(--color-border)" : undefined,
+                }}
+              />
+              {idx < graduacoesOrdenadas.length - 1 && <span className="timeline-linha" />}
             </div>
-          ))}
-        </div>
-      )}
+
+            <div className="timeline-conteudo">
+              <div className="timeline-conteudo-header">
+                <strong>{grad.faixa}</strong>
+                <span className="timeline-data">{formatarData(grad.data)}</span>
+              </div>
+              <p className="timeline-descricao">
+                {idx === 0 ? "Faixa atual" : `Conquistada há ${diasDesde} dias`}
+              </p>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }

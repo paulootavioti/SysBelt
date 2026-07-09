@@ -10,6 +10,7 @@ import { AlunoForm } from "../../components/AlunoForm";
 import { AlunoService } from "../../services/AlunoService";
 import { ResponsavelService } from "../../../responsaveis/services/ResponsavelService";
 import { getApiErrorMessage } from "../../../../shared/utils/getApiErrorMessage";
+import { useToast } from "../../../../contexts/toast/useToast";
 
 import type { Aluno } from "../../types";
 import type { AlunoFormData } from "../../schema/aluno.schema";
@@ -17,6 +18,7 @@ import type { AlunoFormData } from "../../schema/aluno.schema";
 export function EditarAluno() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const toast = useToast();
 
   const [aluno, setAluno] = useState<Aluno | null>(null);
   const [loading, setLoading] = useState(true);
@@ -73,14 +75,12 @@ export function EditarAluno() {
         }
       }
 
+      toast.success("Aluno atualizado com sucesso.");
       navigate("/alunos");
     } catch (error) {
-      setErro(
-        getApiErrorMessage(
-          error,
-          "Erro ao editar aluno."
-        )
-      );
+      const mensagem = getApiErrorMessage(error, "Erro ao editar aluno.");
+      setErro(mensagem);
+      toast.error(mensagem);
     } finally {
       setSalvando(false);
     }

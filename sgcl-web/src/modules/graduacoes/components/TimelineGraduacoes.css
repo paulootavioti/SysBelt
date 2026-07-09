@@ -1,0 +1,64 @@
+.timeline-vazia {
+  text-align: center;
+  color: var(--color-text-light);
+  padding: var(--space-6) 0;
+}
+
+.timeline-graduacoes {
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline-item {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.timeline-marcador {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timeline-ponto {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+}
+
+.timeline-linha {
+  width: 2px;
+  flex: 1;
+  min-height: 32px;
+  background: var(--color-border);
+  margin: var(--space-1) 0;
+}
+
+.timeline-conteudo {
+  flex: 1;
+  padding-bottom: var(--space-4);
+}
+
+.timeline-conteudo-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.timeline-conteudo-header strong {
+  color: var(--color-text);
+}
+
+.timeline-data {
+  font-size: var(--font-sm);
+  color: var(--color-text-light);
+}
+
+.timeline-descricao {
+  margin-top: 2px;
+  font-size: var(--font-sm);
+  color: var(--color-text-light);
+}

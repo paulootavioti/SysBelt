@@ -1,4 +1,5 @@
 import type { Responsavel } from "../../responsaveis/types/responsavel";
+import type { Mensalidade } from "../../mensalidades/types/mensalidade";
 
 export interface TurmaResumo {
   id: number;
@@ -58,4 +59,5 @@ export interface Aluno {
   updatedAt?: string;
 
   responsaveis?: Responsavel[];
+  mensalidades?: Mensalidade[];
 }

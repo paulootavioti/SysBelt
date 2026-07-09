@@ -1,0 +1,9 @@
+.graduacoes-tab {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.graduacoes-tab-secao h3 {
+  margin-bottom: var(--space-4);
+}

@@ -21,23 +21,61 @@
 
 }
 
-.sidebar a{
+.sidebar-nav{
 
-  display:block;
+  display:flex;
+
+  flex-direction:column;
+
+  gap:4px;
+
+  margin-top:16px;
+
+}
+
+.sidebar-link{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:12px;
 
   color:white;
 
   text-decoration:none;
 
-  margin-top:16px;
+  padding:8px 10px;
+
+  border-radius:var(--radius-lg, 8px);
 
   transition:.2s;
 
+  opacity:.85;
+
 }
 
-.sidebar a:hover{
+.sidebar-link svg{
 
-  opacity:.8;
+  flex-shrink:0;
+
+}
+
+.sidebar-link:hover{
+
+  opacity:1;
+
+  background:rgba(255,255,255,.08);
+
+}
+
+.sidebar-link-ativo{
+
+  opacity:1;
+
+  background:rgba(255,255,255,.16);
+
+  font-weight:600;
 
 }
 

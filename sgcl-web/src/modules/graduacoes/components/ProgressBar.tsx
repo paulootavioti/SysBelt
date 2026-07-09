@@ -1,52 +1,39 @@
 import type { EvolucaoAluno } from "../types";
+import "./ProgressBar.css";
 
 interface ProgressBarProps {
   evolucao: EvolucaoAluno;
 }
 
 export function ProgressBar({ evolucao }: ProgressBarProps) {
-  const percentualGrau =
-    ((evolucao.presencas % 32) / 8) * 25;
-  const percentualFaixa =
-    (evolucao.presencas % 32) / 32 * 100;
+  const percentualGrau = Math.min(((evolucao.presencas % 32) / 8) * 25, 100);
+  const percentualFaixa = Math.min(((evolucao.presencas % 32) / 32) * 100, 100);
 
   return (
-    <div className="space-y-4">
-      {/* Faixa Atual */}
-      <div>
-        <div className="flex items-center justify-between mb-2">
-          <p className="text-sm font-semibold text-gray-700">Faixa Atual</p>
-          <p className="text-sm text-gray-600">{evolucao.presencas} aulas</p>
+    <div className="progresso-graduacao">
+      <div className="progresso-item">
+        <div className="progresso-item-header">
+          <span className="progresso-item-label">Faixa Atual — {evolucao.faixaAtual}</span>
+          <span className="progresso-item-valor">{evolucao.presencas} aulas</span>
         </div>
-        <div className="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
-          <div
-            className="bg-blue-600 h-full transition-all duration-300"
-            style={{ width: `${percentualFaixa}%` }}
-          />
+        <div className="progresso-barra">
+          <div className="progresso-barra-preenchimento progresso-barra-faixa" style={{ width: `${percentualFaixa}%` }} />
         </div>
-        <p className="text-xs text-gray-500 mt-1">
-          Faltam {evolucao.faltamParaProximaFaixa} aulas para próxima faixa
+        <p className="progresso-item-nota">
+          Faltam {evolucao.faltamParaProximaFaixa} aulas para a próxima faixa
         </p>
       </div>
 
-      {/* Grau Atual */}
-      <div>
-        <div className="flex items-center justify-between mb-2">
-          <p className="text-sm font-semibold text-gray-700">
-            Progresso no Grau
-          </p>
-          <p className="text-sm text-gray-600">
-            Grau {evolucao.grauAtual + 1} de 4
-          </p>
+      <div className="progresso-item">
+        <div className="progresso-item-header">
+          <span className="progresso-item-label">Progresso no Grau</span>
+          <span className="progresso-item-valor">Grau {evolucao.grauAtual + 1} de 4</span>
         </div>
-        <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-          <div
-            className="bg-green-600 h-full transition-all duration-300"
-            style={{ width: `${percentualGrau}%` }}
-          />
+        <div className="progresso-barra progresso-barra-pequena">
+          <div className="progresso-barra-preenchimento progresso-barra-grau" style={{ width: `${percentualGrau}%` }} />
         </div>
-        <p className="text-xs text-gray-500 mt-1">
-          Faltam {evolucao.faltamParaProximoGrau} aulas para próximo grau
+        <p className="progresso-item-nota">
+          Faltam {evolucao.faltamParaProximoGrau} aulas para o próximo grau
         </p>
       </div>
     </div>

@@ -9,11 +9,13 @@ import { AlunoForm } from "../../components/AlunoForm";
 import { AlunoService } from "../../services/AlunoService";
 import { ResponsavelService } from "../../../responsaveis/services/ResponsavelService";
 import { getApiErrorMessage } from "../../../../shared/utils/getApiErrorMessage";
+import { useToast } from "../../../../contexts/toast/useToast";
 
 import type { AlunoFormData } from "../../schema/aluno.schema";
 
 export function CadastroAluno() {
   const navigate = useNavigate();
+  const toast = useToast();
 
   const [loading, setLoading] = useState(false);
   const [erro, setErro] = useState("");
@@ -39,14 +41,12 @@ export function CadastroAluno() {
         });
       }
 
+      toast.success("Aluno cadastrado com sucesso.");
       navigate("/alunos");
     } catch (error) {
-      setErro(
-        getApiErrorMessage(
-          error,
-          "Erro ao cadastrar aluno."
-        )
-      );
+      const mensagem = getApiErrorMessage(error, "Erro ao cadastrar aluno.");
+      setErro(mensagem);
+      toast.error(mensagem);
     } finally {
       setLoading(false);
     }

@@ -13,6 +13,7 @@ import { EmptyState } from "../../../../components/ui/EmptyState";
 import { Loading } from "../../../../components/ui/Loading";
 
 import { calcularIdade } from "../../../../shared/formatters/data";
+import { calcularStatusFinanceiroAluno } from "../../utils/statusFinanceiro";
 
 import { getApiErrorMessage } from "../../../../shared/utils/getApiErrorMessage";
 import { useAlunos } from "../../hooks/useAlunos";
@@ -91,6 +92,14 @@ export function Alunos() {
           status={aluno.ativo ? "ATIVO" : "INATIVO"}
         />
       ),
+    },
+    {
+      header: "Financeiro",
+      accessor: "mensalidades" as const,
+      render: (aluno: Aluno) => {
+        const status = calcularStatusFinanceiroAluno(aluno.mensalidades);
+        return status ? <StatusBadge status={status} /> : "-";
+      },
     },
     {
       header: "Ações",

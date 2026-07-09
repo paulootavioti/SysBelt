@@ -8,6 +8,13 @@ export class ListAlunosService {
       await prisma.aluno.findMany({
         orderBy: {
           nome: "asc"
+        },
+        include: {
+          mensalidades: {
+            orderBy: {
+              vencimento: "desc"
+            }
+          }
         }
       });
 

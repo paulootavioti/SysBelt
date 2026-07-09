@@ -1,16 +1,18 @@
 import { calcularIdade } from "../../../../shared/formatters/data";
 import { StatusBadge } from "../../../../components/ui/StatusBadge";
+import { calcularStatusFinanceiroAluno } from "../../utils/statusFinanceiro";
 
-import type { Aluno } from "../../types";
+import type { AlunoCompleto } from "../../types/alunoCompleto";
 
 import "./styles.css";
 
 interface AlunoResumoProps {
-  aluno: Aluno;
+  aluno: AlunoCompleto;
 }
 
 export function AlunoResumo({ aluno }: AlunoResumoProps) {
   const idade = calcularIdade(aluno.dataNascimento);
+  const statusFinanceiro = calcularStatusFinanceiroAluno(aluno.mensalidades);
 
   return (
     <section className="aluno-resumo">
@@ -26,7 +28,10 @@ export function AlunoResumo({ aluno }: AlunoResumoProps) {
         <div className="aluno-resumo-header">
           <h2>{aluno.nome}</h2>
 
-          <StatusBadge status={aluno.ativo ? "ATIVO" : "INATIVO"} />
+          <div className="aluno-resumo-badges">
+            <StatusBadge status={aluno.ativo ? "ATIVO" : "INATIVO"} />
+            {statusFinanceiro && <StatusBadge status={statusFinanceiro} />}
+          </div>
         </div>
 
         <p>

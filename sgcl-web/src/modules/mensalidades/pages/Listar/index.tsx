@@ -13,9 +13,11 @@ import { MensalidadeService } from "../../services/MensalidadeService";
 import { MensalidadeCard } from "../../components/MensalidadeCard";
 import { getApiErrorMessage } from "../../../../shared/utils/getApiErrorMessage";
 import { calcularStatusMensalidade } from "../../utils/status";
+import { useToast } from "../../../../contexts/toast/useToast";
 import "./styles.css";
 export function ListarMensalidades() {
   const navigate = useNavigate();
+  const toast = useToast();
   const { mensalidades, loading, erro, setErro, carregarMensalidades } = useMensalidades();
   const [filtro, setFiltro] = useState<"TODAS" | "PENDENTE" | "VENCIDA" | "PAGA">("TODAS");
   const [busca, setBusca] = useState("");
@@ -33,8 +35,11 @@ export function ListarMensalidades() {
       setErro("");
       await MensalidadeService.marcarComoPago(id);
       await carregarMensalidades();
+      toast.success("Mensalidade marcada como paga.");
     } catch (error) {
-      setErro(getApiErrorMessage(error, "Erro ao marcar como pago."));
+      const mensagem = getApiErrorMessage(error, "Erro ao marcar como pago.");
+      setErro(mensagem);
+      toast.error(mensagem);
     }
   }
   const totalPendente = mensalidades
