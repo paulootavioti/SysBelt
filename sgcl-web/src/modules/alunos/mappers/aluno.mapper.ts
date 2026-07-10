@@ -11,6 +11,7 @@ export function alunoParaFormulario(aluno?: Partial<Aluno>) {
 
   return {
     nome: aluno?.nome ?? "",
+    apelido: aluno?.apelido ?? "",
     dataNascimento: formatarDataParaInput(aluno?.dataNascimento),
     sexo: aluno?.sexo ?? "",
     cpf: aluno?.cpf ?? "",
@@ -42,11 +43,16 @@ export function alunoParaFormulario(aluno?: Partial<Aluno>) {
 
     turmaId: aluno?.turmaId?.toString() ?? "",
 
+    formaPagamento: aluno?.formaPagamento ?? "",
+    diaVencimento: aluno?.diaVencimento?.toString() ?? "",
+    planoId: aluno?.planoId?.toString() ?? "",
+
     fotoUrl: aluno?.fotoUrl ?? "",
 
     responsavel: {
       id: primeiroResponsavel?.id,
       nome: primeiroResponsavel?.nome ?? "",
+      apelido: primeiroResponsavel?.apelido ?? "",
       parentesco: primeiroResponsavel?.parentesco ?? "",
       telefone: primeiroResponsavel?.telefone ?? "",
       whatsapp: primeiroResponsavel?.whatsapp ?? "",

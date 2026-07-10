@@ -3,6 +3,8 @@ import { z } from "zod";
 export const responsavelSchema = z.object({
   nome: z.string().min(3, "Informe o nome do responsável."),
 
+  apelido: z.string().optional().nullable(),
+
   parentesco: z.string().min(2, "Informe o parentesco."),
 
   telefone: z.string().optional().nullable(),

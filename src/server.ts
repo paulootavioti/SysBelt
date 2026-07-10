@@ -21,6 +21,7 @@ import { usuariosRoutes } from "./modules/usuarios/routes";
 import { aulasRoutes } from "./modules/aulas/routes";
 import { tecnicasRoutes } from "./modules/tecnicas/routes";
 import { curriculosRoutes } from "./modules/curriculos/routes";
+import { planosRoutes } from "./modules/planos/routes";
 const app = express();
 
 app.use((req, res, next) => {
@@ -59,6 +60,7 @@ app.use("/usuarios", usuariosRoutes);
 app.use("/aulas", aulasRoutes);
 app.use("/tecnicas", tecnicasRoutes);
 app.use("/curriculos", curriculosRoutes);
+app.use("/planos", planosRoutes);
 
 app.use("/auth", authRoutes);
 app.use(errorHandler);

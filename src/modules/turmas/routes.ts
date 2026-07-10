@@ -29,6 +29,13 @@ turmasRoutes.get(
   turmasController.show
 );
 
+turmasRoutes.put(
+  "/:id",
+  ensureAuthenticated,
+  ensureRole(["ADMIN", "PROFESSOR", "RECEPCAO"]),
+  turmasController.update
+);
+
 turmasRoutes.patch(
   "/:turmaId/alunos/:alunoId",
   ensureAuthenticated,

@@ -8,8 +8,11 @@ export class ListUsuariosService {
       select: {
         id: true,
         nome: true,
+        apelido: true,
         email: true,
         perfil: true,
+        nivelGraduacao: true,
+        outrasGraduacoes: true,
         ativo: true,
         createdAt: true
       },

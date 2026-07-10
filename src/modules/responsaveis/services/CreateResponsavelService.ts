@@ -3,6 +3,7 @@ import { AppError } from "../../../shared/errors/AppError";
 
 interface CreateResponsavelDTO {
   nome: string;
+  apelido?: string | null;
 
   cpf?: string | null;
   rg?: string | null;
@@ -64,6 +65,7 @@ export class CreateResponsavelService {
     return prisma.responsavel.create({
       data: {
         nome: data.nome,
+        apelido: data.apelido,
 
         cpf: data.cpf,
         rg: data.rg,

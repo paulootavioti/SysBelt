@@ -3,6 +3,8 @@ export interface Responsavel {
 
   nome: string;
 
+  apelido?: string | null;
+
   parentesco: string;
 
   telefone?: string | null;

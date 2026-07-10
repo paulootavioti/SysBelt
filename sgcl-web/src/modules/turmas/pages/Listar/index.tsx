@@ -14,6 +14,7 @@ import { Modal } from "../../../../components/ui/Modal";
 import { useTurmas } from "../../hooks/useTurmas";
 import { TurmaService } from "../../services/TurmaService";
 import { getApiErrorMessage } from "../../../../shared/utils/getApiErrorMessage";
+import { useToast } from "../../../../contexts/toast/useToast";
 import { TurmaForm } from "../../components/TurmaForm";
 import type { Turma } from "../../types/turma";
 import type { TurmaFormData } from "../../schema/turma.schema";
@@ -22,19 +23,41 @@ import "./styles.css";
 
 export function Turmas() {
   const navigate = useNavigate();
+  const toast = useToast();
   const { turmas, loading, erro, setErro, carregarTurmas } = useTurmas();
   const [modalAberto, setModalAberto] = useState(false);
+  const [turmaEditando, setTurmaEditando] = useState<Turma | null>(null);
   const [salvando, setSalvando] = useState(false);
 
-  async function handleCriarTurma(data: TurmaFormData) {
+  function handleNovaTurma() {
+    setTurmaEditando(null);
+    setModalAberto(true);
+  }
+
+  function handleEditarTurma(turma: Turma) {
+    setTurmaEditando(turma);
+    setModalAberto(true);
+  }
+
+  async function handleSalvarTurma(data: TurmaFormData) {
     try {
       setSalvando(true);
       setErro("");
-      await TurmaService.criar(data);
+
+      if (turmaEditando) {
+        await TurmaService.editar(turmaEditando.id, data);
+        toast.success("Turma atualizada com sucesso.");
+      } else {
+        await TurmaService.criar(data);
+        toast.success("Turma cadastrada com sucesso.");
+      }
+
       await carregarTurmas();
       setModalAberto(false);
     } catch (error) {
-      setErro(getApiErrorMessage(error, "Erro ao cadastrar turma."));
+      const mensagem = getApiErrorMessage(error, "Erro ao salvar turma.");
+      setErro(mensagem);
+      toast.error(mensagem);
     } finally {
       setSalvando(false);
     }
@@ -53,7 +76,11 @@ export function Turmas() {
   const columns = [
     { header: "Nome", accessor: "nome" as const },
     { header: "Faixa Etária", accessor: "faixaEtaria" as const },
-    { header: "Professor", accessor: "professor" as const },
+    {
+      header: "Professor",
+      accessor: "professor" as const,
+      render: (turma: Turma) => turma.professor?.apelido || turma.professor?.nome || "-",
+    },
     { header: "Dias", accessor: "diasSemana" as const },
     {
       header: "Horário",
@@ -84,6 +111,10 @@ export function Turmas() {
             Ver alunos
           </Button>
 
+          <Button type="button" variant="secondary" onClick={() => handleEditarTurma(turma)}>
+            Editar
+          </Button>
+
           <Button
             type="button"
             variant={turma.ativo ? "danger" : "primary"}
@@ -101,7 +132,7 @@ export function Turmas() {
       <PageHeader title="Turmas" subtitle="Gestão de turmas e horários." />
 
       <div className="turmas-acoes">
-        <Button type="button" onClick={() => setModalAberto(true)}>
+        <Button type="button" onClick={handleNovaTurma}>
           + Nova Turma
         </Button>
       </div>
@@ -116,8 +147,17 @@ export function Turmas() {
         <Table columns={columns} data={turmas} />
       )}
 
-      <Modal open={modalAberto} title="Nova Turma" onClose={() => setModalAberto(false)}>
-        <TurmaForm loading={salvando} onSubmit={handleCriarTurma} />
+      <Modal
+        open={modalAberto}
+        title={turmaEditando ? "Editar Turma" : "Nova Turma"}
+        onClose={() => setModalAberto(false)}
+      >
+        <TurmaForm
+          key={turmaEditando?.id ?? "nova-turma"}
+          turma={turmaEditando ?? undefined}
+          loading={salvando}
+          onSubmit={handleSalvarTurma}
+        />
       </Modal>
     </Layout>
   );

@@ -6,15 +6,26 @@ interface CreateTurmaDTO {
   diasSemana: string;
   horarioInicio: string;
   horarioFim: string;
-  professor: string;
+  professorId?: number;
   limiteAlunos?: number;
+  curriculoId?: number;
 }
 
 export class CreateTurmaService {
   async execute(data: CreateTurmaDTO) {
 
     return prisma.turma.create({
-      data
+      data,
+      include: {
+        professor: {
+          select: {
+            id: true,
+            nome: true,
+            apelido: true,
+          },
+        },
+        curriculo: true,
+      },
     });
 
   }

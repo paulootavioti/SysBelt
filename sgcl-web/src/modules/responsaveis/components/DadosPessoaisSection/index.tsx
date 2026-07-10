@@ -34,6 +34,11 @@ export function DadosPessoaisSection() {
           />
         </FormGridItem>
 
+        <Input
+          label="Apelido (como gosta de ser chamado)"
+          {...register("apelido")}
+        />
+
         <Select
           label="Parentesco"
           options={PARENTESCOS}

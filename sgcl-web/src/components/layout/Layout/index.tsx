@@ -16,6 +16,7 @@ import {
   LuTrophy,
   LuChartLine,
   LuPiggyBank,
+  LuCreditCard,
   LuLogOut,
 } from "react-icons/lu";
 import "./styles.css";
@@ -38,6 +39,7 @@ const NAV_ITEMS = [
   { to: "/competicoes", label: "Competições", icon: LuTrophy },
   { to: "/relatorios", label: "Relatórios", icon: LuChartLine },
   { to: "/financeiro", label: "Financeiro", icon: LuPiggyBank },
+  { to: "/planos", label: "Planos", icon: LuCreditCard },
 ];
 
 export function Layout({ children }: LayoutProps) {

@@ -22,6 +22,7 @@ model Aluno {
   id                Int              @id @default(autoincrement())
 
   nome              String
+  apelido           String?
   dataNascimento    DateTime
 
   sexo              String?
@@ -71,6 +72,12 @@ model Aluno {
   turmaId           Int?
   turma             Turma?           @relation(fields: [turmaId], references: [id])
 
+  formaPagamento    String?
+  diaVencimento     Int?
+
+  planoId           Int?
+  plano             Plano?           @relation(fields: [planoId], references: [id])
+
   createdAt         DateTime         @default(now())
   //updatedAt         DateTime         @updatedAt
   updatedAt DateTime @default(now()) @updatedAt
@@ -80,6 +87,7 @@ model Responsavel {
   id                     Int      @id @default(autoincrement())
 
   nome                   String
+  apelido                String?
 
   cpf                    String?
   rg                     String?
@@ -210,7 +218,8 @@ model Turma {
   horarioInicio String
   horarioFim    String
 
-  professor     String
+  professorId   Int?
+  professor     Usuario? @relation(fields: [professorId], references: [id])
 
   limiteAlunos  Int?
 
@@ -229,17 +238,37 @@ model Turma {
 }
 
 model Usuario {
-  id        Int      @id @default(autoincrement())
+  id                Int      @id @default(autoincrement())
 
-  nome      String
-  email     String   @unique
-  senha     String
+  nome              String
+  apelido           String?
+  email             String   @unique
+  senha             String
 
-  perfil    String
+  perfil            String
 
-  ativo     Boolean  @default(true)
+  nivelGraduacao    String?
+  outrasGraduacoes  String?
 
-  createdAt DateTime @default(now())
+  ativo             Boolean  @default(true)
+
+  turmas            Turma[]
+
+  createdAt         DateTime @default(now())
+}
+
+model Plano {
+  id            Int      @id @default(autoincrement())
+
+  nome          String
+  valor         Float
+  periodicidade String
+
+  ativo         Boolean  @default(true)
+
+  alunos        Aluno[]
+
+  createdAt     DateTime @default(now())
 }
 
 model Aula {

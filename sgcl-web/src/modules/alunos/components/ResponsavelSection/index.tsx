@@ -41,6 +41,10 @@ export function ResponsavelSection() {
         </FormGridItem>
 
         <FormGridItem>
+          <Input label="Apelido (como gosta de ser chamado)" {...register("responsavel.apelido")} />
+        </FormGridItem>
+
+        <FormGridItem>
           <Select
             label={`Parentesco${obrigatorio ? " *" : ""}`}
             options={PARENTESCOS}

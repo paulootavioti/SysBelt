@@ -30,6 +30,7 @@ export function CadastroAluno() {
       if (data.responsavel?.nome) {
         await ResponsavelService.criar(novoAluno.id, {
           nome: data.responsavel.nome,
+          apelido: data.responsavel.apelido,
           parentesco: data.responsavel.parentesco || "Não informado",
           telefone: data.responsavel.telefone,
           whatsapp: data.responsavel.whatsapp,

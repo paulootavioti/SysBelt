@@ -8,7 +8,7 @@ import { FormGrid } from "../../../../components/ui/FormGrid";
 import { FormGridItem } from "../../../../components/ui/FormGridItem";
 
 import { SEXOS } from "../../constants/sexo";
-import { maskCPF } from "../../../../shared/formatters/masks";
+import { maskCPF, maskTelefone } from "../../../../shared/formatters/masks";
 import { calcularIdade } from "../../../../shared/formatters/data";
 
 
@@ -35,6 +35,8 @@ export function DadosPessoaisSection() {
 
           <ErrorMessage message={errors.nome?.message ?? ""} />
         </FormGridItem>
+
+        <Input label="Apelido (como gosta de ser chamado)" {...register("apelido")} />
 
         <div>
         <Input
@@ -69,6 +71,29 @@ export function DadosPessoaisSection() {
         </div>
 
         <Input label="RG" placeholder="Número do RG" {...register("rg")} />
+
+        <Input
+          label="WhatsApp"
+          {...register("whatsapp")}
+          onChange={(e) => {
+            e.target.value = maskTelefone(e.target.value);
+            register("whatsapp").onChange(e);
+          }}
+        />
+
+        <Input
+          label="Telefone *"
+          {...register("telefone")}
+          onChange={(e) => {
+            e.target.value = maskTelefone(e.target.value);
+            register("telefone").onChange(e);
+          }}
+        />
+
+        <FormGridItem span={2}>
+          <Input label="E-mail" {...register("email")} />
+          <ErrorMessage message={errors.email?.message ?? ""} />
+        </FormGridItem>
       </FormGrid>
     </FormSection>
   );

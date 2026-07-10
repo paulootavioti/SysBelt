@@ -5,6 +5,13 @@ export class ListTurmasService {
     return prisma.turma.findMany({
       include: {
         curriculo: true,
+        professor: {
+          select: {
+            id: true,
+            nome: true,
+            apelido: true,
+          },
+        },
         _count: {
           select: {
             alunos: {

@@ -1,0 +1,10 @@
+.planos-acoes {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: var(--space-4);
+}
+
+.planos-table-actions {
+  display: flex;
+  gap: var(--space-2);
+}

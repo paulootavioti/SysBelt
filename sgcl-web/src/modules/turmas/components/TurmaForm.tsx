@@ -12,27 +12,33 @@ import { FormGridItem } from "../../../components/ui/FormGridItem";
 import type { Curriculo } from "../../curriculos/types/curriculo";
 import { CurriculoService } from "../../curriculos/services/CurriculoService";
 
+import type { Usuario } from "../../usuarios/types/usuario";
+import { UsuarioService } from "../../usuarios/services/UsuarioService";
+
 import { turmaSchema, type TurmaFormData } from "../schema/turma.schema";
+import type { Turma } from "../types/turma";
 
 interface TurmaFormProps {
+  turma?: Turma;
   loading?: boolean;
   onSubmit: (data: TurmaFormData) => void;
 }
 
-export function TurmaForm({ loading = false, onSubmit }: TurmaFormProps) {
+export function TurmaForm({ turma, loading = false, onSubmit }: TurmaFormProps) {
   const [curriculos, setCurriculos] = useState<Curriculo[]>([]);
+  const [professores, setProfessores] = useState<Usuario[]>([]);
 
   const methods = useForm<TurmaFormData>({
     resolver: zodResolver(turmaSchema),
     defaultValues: {
-      nome: "",
-      faixaEtaria: "",
-      diasSemana: "",
-      horarioInicio: "",
-      horarioFim: "",
-      professor: "",
-      curriculoId: "",
-      limiteAlunos: "",
+      nome: turma?.nome ?? "",
+      faixaEtaria: turma?.faixaEtaria ?? "",
+      diasSemana: turma?.diasSemana ?? "",
+      horarioInicio: turma?.horarioInicio ?? "",
+      horarioFim: turma?.horarioFim ?? "",
+      professorId: turma?.professorId ? String(turma.professorId) : "",
+      curriculoId: turma?.curriculoId ? String(turma.curriculoId) : "",
+      limiteAlunos: turma?.limiteAlunos ? String(turma.limiteAlunos) : "",
     },
   });
 
@@ -40,6 +46,9 @@ export function TurmaForm({ loading = false, onSubmit }: TurmaFormProps) {
 
   useEffect(() => {
     CurriculoService.listar().then(setCurriculos);
+    UsuarioService.listar().then((usuarios) =>
+      setProfessores(usuarios.filter((usuario) => usuario.perfil === "PROFESSOR"))
+    );
   }, []);
 
   return (
@@ -57,8 +66,15 @@ export function TurmaForm({ loading = false, onSubmit }: TurmaFormProps) {
           </FormGridItem>
 
           <FormGridItem>
-            <Input label="Professor" {...register("professor")} />
-            <ErrorMessage message={errors.professor?.message ?? ""} />
+            <Select
+              label="Professor"
+              options={professores.map((professor) => ({
+                label: professor.apelido || professor.nome,
+                value: String(professor.id),
+              }))}
+              {...register("professorId")}
+            />
+            <ErrorMessage message={errors.professorId?.message ?? ""} />
           </FormGridItem>
 
           <FormGridItem span={2}>
@@ -96,7 +112,7 @@ export function TurmaForm({ loading = false, onSubmit }: TurmaFormProps) {
         </FormGrid>
 
         <Button type="submit" disabled={loading}>
-          {loading ? "Salvando..." : "Cadastrar Turma"}
+          {loading ? "Salvando..." : turma ? "Salvar Alterações" : "Cadastrar Turma"}
         </Button>
       </form>
     </FormProvider>

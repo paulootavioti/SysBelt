@@ -6,10 +6,18 @@ export interface TurmaResumo {
   nome: string;
 }
 
+export interface PlanoResumo {
+  id: number;
+  nome: string;
+  valor: number;
+  periodicidade: string;
+}
+
 export interface Aluno {
   id: number;
 
   nome: string;
+  apelido?: string | null;
   dataNascimento: string;
 
   sexo?: string | null;
@@ -54,7 +62,12 @@ export interface Aluno {
     id: number;
     nome: string;
   } | null;
-  
+
+  formaPagamento?: string | null;
+  diaVencimento?: number | null;
+  planoId?: number | null;
+  plano?: PlanoResumo | null;
+
   createdAt?: string;
   updatedAt?: string;
 

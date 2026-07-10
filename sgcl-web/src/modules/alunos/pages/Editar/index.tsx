@@ -58,6 +58,7 @@ export function EditarAluno() {
       if (data.responsavel?.nome) {
         const dadosResponsavel = {
           nome: data.responsavel.nome,
+          apelido: data.responsavel.apelido,
           parentesco: data.responsavel.parentesco || "Não informado",
           telefone: data.responsavel.telefone,
           whatsapp: data.responsavel.whatsapp,

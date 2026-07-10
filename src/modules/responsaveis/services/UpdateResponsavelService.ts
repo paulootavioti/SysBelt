@@ -5,6 +5,7 @@ interface UpdateResponsavelDTO {
   id: number;
 
   nome: string;
+  apelido?: string | null;
 
   cpf?: string | null;
   rg?: string | null;
@@ -76,6 +77,7 @@ export class UpdateResponsavelService {
       where: { id: data.id },
       data: {
         nome: data.nome,
+        apelido: data.apelido,
 
         cpf: data.cpf,
         rg: data.rg,

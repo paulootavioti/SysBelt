@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 
 import { CreateTurmaService } from "./services/CreateTurmaService";
+import { UpdateTurmaService } from "./services/UpdateTurmaService";
 import { ListTurmasService } from "./services/ListTurmasService";
 import { VincularAlunoTurmaService } from "./services/VincularAlunoTurmaService";
 import { GetTurmaDetalhadaService } from "./services/GetTurmaDetalhadaService";
@@ -21,6 +22,27 @@ export class TurmasController {
       await service.execute(req.body);
 
     return res.status(201).json(turma);
+
+  }
+
+  async update(
+    req: Request,
+    res: Response
+  ) {
+
+    const { id } =
+      req.params;
+
+    const service =
+      new UpdateTurmaService();
+
+    const turma =
+      await service.execute(
+        Number(id),
+        req.body
+      );
+
+    return res.json(turma);
 
   }
 

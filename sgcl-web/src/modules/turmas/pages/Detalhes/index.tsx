@@ -122,7 +122,7 @@ export function DetalheTurma() {
 
       <PageHeader
         title={turma.nome}
-        subtitle={`${turma.professor} — ${turma.diasSemana} — ${turma.horarioInicio} às ${turma.horarioFim}${
+        subtitle={`${turma.professor?.apelido || turma.professor?.nome || "Sem professor"} — ${turma.diasSemana} — ${turma.horarioInicio} às ${turma.horarioFim}${
           turma.limiteAlunos
             ? ` — ${turma.alunos.filter((a) => a.ativo).length}/${turma.limiteAlunos} vagas`
             : ""

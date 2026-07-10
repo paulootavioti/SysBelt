@@ -9,6 +9,13 @@ export class GetTurmaDetalhadaService {
       },
       include: {
         curriculo: true,
+        professor: {
+          select: {
+            id: true,
+            nome: true,
+            apelido: true,
+          },
+        },
         alunos: {
           orderBy: {
             nome: "asc",

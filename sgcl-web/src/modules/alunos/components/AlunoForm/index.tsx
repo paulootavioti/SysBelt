@@ -10,12 +10,12 @@ import { Tabs } from "../../../../components/ui/Tabs";
 import { alunoSchema, type AlunoFormData } from "../../schema/aluno.schema";
 
 import { DadosPessoaisSection } from "../DadosPessoaisSection";
-import { ContatoSection } from "../ContatoSection";
 import { EnderecoSection } from "../EnderecoSection";
 import { EscolaSection } from "../EscolaSection";
 import { SaudeSection } from "../SaudeSection";
 import { KimonoSection } from "../KimonoSection";
 import { TurmaSection } from "../TurmaSection";
+import { PagamentoSection } from "../PagamentoSection";
 import { ObservacoesSection } from "../ObservacoesSection";
 import { ResponsavelSection } from "../ResponsavelSection";
 
@@ -49,15 +49,21 @@ export function AlunoForm({ aluno, loading, onSubmit }: AlunoFormProps) {
   const { errors } = methods.formState;
 
   const temErroDados = Boolean(
-    errors.nome || errors.dataNascimento || errors.sexo || errors.cpf || errors.rg ||
-    errors.cep || errors.logradouro || errors.numero || errors.complemento ||
-    errors.bairro || errors.cidade || errors.uf || errors.escola ||
-    errors.serieEscolar || errors.turnoEscolar || errors.fotoUrl
+    errors.nome || errors.apelido || errors.dataNascimento || errors.sexo || errors.cpf || errors.rg ||
+    errors.whatsapp || errors.telefone || errors.email || errors.fotoUrl
   );
 
-  const temErroContato = Boolean(errors.telefone || errors.whatsapp || errors.email);
-  const temErroResponsavel = Boolean(errors.responsavel);
-  const temErroTurma = Boolean(errors.turmaId);
+  const temErroResponsavel = Boolean(
+    errors.responsavel ||
+    errors.cep || errors.logradouro || errors.numero || errors.complemento ||
+    errors.bairro || errors.cidade || errors.uf ||
+    errors.escola || errors.serieEscolar || errors.turnoEscolar
+  );
+
+  const temErroTurma = Boolean(
+    errors.turmaId || errors.formaPagamento || errors.diaVencimento || errors.planoId
+  );
+
   const temErroSaude = Boolean(
     errors.peso || errors.altura || errors.restricoesMedicas ||
     errors.alergias || errors.medicamentos || errors.tamanhoKimono ||
@@ -76,8 +82,6 @@ export function AlunoForm({ aluno, loading, onSubmit }: AlunoFormProps) {
               content: (
                 <>
                   <DadosPessoaisSection />
-                  <EnderecoSection />
-                  <EscolaSection />
                   <FormSection title="Foto" subtitle="Foto do aluno.">
                     <ImageUpload label="Foto" onChange={setFoto} />
                   </FormSection>
@@ -85,19 +89,25 @@ export function AlunoForm({ aluno, loading, onSubmit }: AlunoFormProps) {
               ),
             },
             {
-              label: <TabLabel texto="Contato" comErro={temErroContato} />,
-              value: "contato",
-              content: <ContatoSection />,
-            },
-            {
               label: <TabLabel texto="Responsável" comErro={temErroResponsavel} />,
               value: "responsavel",
-              content: <ResponsavelSection />,
+              content: (
+                <>
+                  <ResponsavelSection />
+                  <EnderecoSection />
+                  <EscolaSection />
+                </>
+              ),
             },
             {
               label: <TabLabel texto="Turma" comErro={temErroTurma} />,
               value: "turma",
-              content: <TurmaSection />,
+              content: (
+                <>
+                  <TurmaSection />
+                  <PagamentoSection />
+                </>
+              ),
             },
             {
               label: <TabLabel texto="Saúde" comErro={temErroSaude} />,

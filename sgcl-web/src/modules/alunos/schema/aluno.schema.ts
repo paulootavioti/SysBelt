@@ -5,6 +5,8 @@ export const alunoSchema = z
   .object({
     nome: z.string().min(3, "Informe o nome do aluno."),
 
+    apelido: z.string().optional(),
+
     dataNascimento: z.string().min(1, "Informe a data de nascimento."),
 
     sexo: z.string().optional(),
@@ -60,12 +62,19 @@ export const alunoSchema = z
 
     turmaId: z.string().optional(),
 
+    formaPagamento: z.string().optional(),
+
+    diaVencimento: z.string().optional(),
+
+    planoId: z.string().optional(),
+
     fotoUrl: z.string().optional(),
 
     responsavel: z
       .object({
         id: z.number().optional(),
         nome: z.string().optional(),
+        apelido: z.string().optional(),
         parentesco: z.string().optional(),
         telefone: z.string().optional(),
         whatsapp: z.string().optional(),

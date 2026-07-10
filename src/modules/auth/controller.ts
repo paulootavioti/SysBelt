@@ -12,8 +12,11 @@ export class AuthController {
     return res.status(201).json({
       id: usuario.id,
       nome: usuario.nome,
+      apelido: usuario.apelido,
       email: usuario.email,
-      perfil: usuario.perfil
+      perfil: usuario.perfil,
+      nivelGraduacao: usuario.nivelGraduacao,
+      outrasGraduacoes: usuario.outrasGraduacoes
     });
   }
 

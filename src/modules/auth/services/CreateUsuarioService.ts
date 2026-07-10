@@ -4,18 +4,24 @@ import { AppError } from "../../../shared/errors/AppError";
 
 interface CreateUsuarioDTO {
   nome: string;
+  apelido?: string;
   email: string;
   senha: string;
   perfil: string;
+  nivelGraduacao?: string;
+  outrasGraduacoes?: string;
 }
 
 export class CreateUsuarioService {
 
   async execute({
     nome,
+    apelido,
     email,
     senha,
-    perfil
+    perfil,
+    nivelGraduacao,
+    outrasGraduacoes
   }: CreateUsuarioDTO) {
 
     const usuarioExistente =
@@ -37,9 +43,12 @@ export class CreateUsuarioService {
     return prisma.usuario.create({
       data: {
         nome,
+        apelido,
         email,
         senha: senhaHash,
-        perfil
+        perfil,
+        nivelGraduacao,
+        outrasGraduacoes
       }
     });
 

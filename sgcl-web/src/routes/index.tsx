@@ -30,6 +30,8 @@ import { PrivateRoute } from "./PrivateRoute";
 import { Turmas } from "../modules/turmas/pages/Listar";
 import { DetalheTurma } from "../modules/turmas/pages/Detalhes";
 
+import { Planos } from "../modules/planos/pages/Listar";
+
 export function AppRoutes() {
   return (
     <Routes>
@@ -220,6 +222,15 @@ export function AppRoutes() {
         element={
           <PrivateRoute>
             <DetalheTurma />
+          </PrivateRoute>
+        }
+      />
+
+      <Route
+        path="/planos"
+        element={
+          <PrivateRoute>
+            <Planos />
           </PrivateRoute>
         }
       />

@@ -5,6 +5,7 @@ interface UpdateAlunoDTO {
   id: number;
 
   nome: string;
+  apelido?: string | null;
   dataNascimento: string;
 
   sexo?: string | null;
@@ -41,6 +42,10 @@ interface UpdateAlunoDTO {
   fotoUrl?: string | null;
 
   turmaId?: string | number | null;
+
+  formaPagamento?: string | null;
+  diaVencimento?: string | number | null;
+  planoId?: string | number | null;
 }
 
 function toNumberOrNull(value: unknown) {
@@ -65,6 +70,7 @@ export class UpdateAlunoService {
       where: { id: data.id },
       data: {
         nome: data.nome,
+        apelido: data.apelido,
         dataNascimento: new Date(data.dataNascimento),
 
         sexo: data.sexo,
@@ -100,6 +106,10 @@ export class UpdateAlunoService {
 
         fotoUrl: data.fotoUrl,
         turmaId: toNumberOrNull(data.turmaId),
+
+        formaPagamento: data.formaPagamento,
+        diaVencimento: toNumberOrNull(data.diaVencimento),
+        planoId: toNumberOrNull(data.planoId),
       },
     });
   }

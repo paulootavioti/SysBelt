@@ -28,6 +28,7 @@ export class GetAlunoCompletoService {
           }
         },
         turma: true,
+        plano: true,
         comportamentos: {
           orderBy: {
             createdAt: "desc"
