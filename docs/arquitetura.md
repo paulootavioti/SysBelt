@@ -8,7 +8,7 @@ Versão do documento: 1.0
 
 # Visão Geral
 
-O SGCL Kids (Sistema de Gestão da Cia de Lutas) foi desenvolvido utilizando arquitetura em camadas, separando claramente responsabilidades entre frontend, backend, banco de dados e regras de negócio.
+O Sys Belt - Sistema Faixa Preta foi desenvolvido utilizando arquitetura em camadas, separando claramente responsabilidades entre frontend, backend, banco de dados e regras de negócio.
 
 O objetivo principal dessa arquitetura é garantir:
 
@@ -592,6 +592,6 @@ Design System próprio
 
 # Resumo
 
-O SGCL Kids foi arquitetado para ser uma plataforma completa de gestão pedagógica e administrativa para academias de artes marciais, priorizando modularidade, organização, escalabilidade e facilidade de manutenção.
+O Sys Belt - Sistema Faixa Preta foi arquitetado para ser uma plataforma completa de gestão pedagógica e administrativa para academias de artes marciais, priorizando modularidade, organização, escalabilidade e facilidade de manutenção.
 
 A arquitetura atual suporta a evolução do sistema para uma solução SaaS sem necessidade de reestruturações profundas.

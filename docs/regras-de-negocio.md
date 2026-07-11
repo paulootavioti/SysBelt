@@ -8,7 +8,7 @@ Versão do documento: 1.0
 
 # Objetivo
 
-Este documento descreve todas as regras de negócio do SGCL Kids.
+Este documento descreve todas as regras de negócio do Sys Belt - Sistema Faixa Preta.
 
 Toda implementação realizada no sistema deve obedecer às regras aqui descritas.
 
@@ -18,7 +18,7 @@ Caso uma regra seja alterada, este documento deverá ser atualizado antes da imp
 
 # Filosofia do Sistema
 
-O SGCL não é apenas um sistema administrativo.
+O Sys Belt não é apenas um sistema administrativo.
 
 Ele foi desenvolvido para acompanhar toda a jornada do aluno dentro da academia.
 
@@ -632,7 +632,7 @@ Inteligência Artificial
 
 # Princípios
 
-O SGCL foi desenvolvido considerando que o objetivo principal da academia não é apenas ensinar técnicas de Jiu-Jitsu, mas formar pessoas.
+O Sys Belt foi desenvolvido considerando que o objetivo principal da academia não é apenas ensinar técnicas de Jiu-Jitsu, mas formar pessoas.
 
 Por isso, todas as regras do sistema procuram refletir tanto a evolução técnica quanto o desenvolvimento humano do aluno.
 

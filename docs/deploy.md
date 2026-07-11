@@ -8,7 +8,7 @@ Versão: 1.0
 
 # Objetivo
 
-Este documento descreve o processo oficial de implantação (Deploy) do SGCL Kids.
+Este documento descreve o processo oficial de implantação (Deploy) do Sys Belt - Sistema Faixa Preta.
 
 Seu objetivo é garantir que qualquer desenvolvedor consiga publicar uma nova versão do sistema de forma segura, reproduzível e documentada.
 
@@ -16,7 +16,7 @@ Seu objetivo é garantir que qualquer desenvolvedor consiga publicar uma nova ve
 
 # Ambientes
 
-O SGCL possui três ambientes.
+O Sys Belt possui três ambientes.
 
 ## Desenvolvimento
 
@@ -630,4 +630,4 @@ Próximas melhorias
 
 # Conclusão
 
-O processo de Deploy do SGCL foi projetado para garantir segurança, disponibilidade e rastreabilidade, permitindo que novas versões sejam publicadas com mínimo risco e máxima previsibilidade.
+O processo de Deploy do Sys Belt foi projetado para garantir segurança, disponibilidade e rastreabilidade, permitindo que novas versões sejam publicadas com mínimo risco e máxima previsibilidade.

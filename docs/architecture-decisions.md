@@ -1,4 +1,4 @@
-# SGCL — Architecture Decision Records
+# Sys Belt — Architecture Decision Records
 
 ## ADR-001 — Separação entre Backend e Frontend
 
@@ -6,7 +6,7 @@ Data: 25/06/2026
 
 ### Decisão
 
-O SGCL será dividido em dois projetos:
+O Sys Belt será dividido em dois projetos:
 
 - sgcl-api
 - sgcl-web

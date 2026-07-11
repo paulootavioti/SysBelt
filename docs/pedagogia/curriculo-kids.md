@@ -2,7 +2,7 @@
 
 ## 1. Objetivo
 
-Organizar a evolução técnica, comportamental e pedagógica dos alunos do Infantil (4 a 14 anos), permitindo que o SGCL acompanhe presença, comportamento, técnicas aprendidas e critérios de graduação.
+Organizar a evolução técnica, comportamental e pedagógica dos alunos do Infantil (4 a 14 anos), permitindo que o Sys Belt acompanhe presença, comportamento, técnicas aprendidas e critérios de graduação.
 
 ## 2. Divisão por idade
 
@@ -77,7 +77,7 @@ O aluno será avaliado por:
 - Aplicação em treinos
 - Respeito aos colegas e professores
 
-## 7. Objetivo do SGCL
+## 7. Objetivo do Sys Belt
 
 O sistema deverá registrar:
 

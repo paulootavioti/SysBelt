@@ -4,7 +4,7 @@ Versão 1.0
 
 Cia de Lutas Weberty Viana
 
-Sistema SGCL Kids
+Sistema Sys Belt - Sistema Faixa Preta
 
 ---
 
@@ -14,7 +14,7 @@ O presente documento estabelece a metodologia pedagógica utilizada pela Cia de 
 
 Seu objetivo é padronizar o ensino entre todos os professores da equipe, garantindo que todas as crianças recebam uma formação consistente, progressiva e baseada em princípios técnicos, humanos e esportivos.
 
-Este documento também serve como base para o funcionamento do SGCL Kids, sendo utilizado pelo sistema para organizar currículos, técnicas, avaliações e evolução dos alunos.
+Este documento também serve como base para o funcionamento do Sys Belt - Sistema Faixa Preta, sendo utilizado pelo sistema para organizar currículos, técnicas, avaliações e evolução dos alunos.
 
 ---
 
@@ -104,7 +104,7 @@ Preparar alunos para:
 
 # Organização por Faixa Etária
 
-O SGCL organiza os alunos em quatro categorias.
+O Sys Belt organiza os alunos em quatro categorias.
 
 ## Infantil (4 a 14 anos)
 
@@ -431,7 +431,7 @@ Atenção
 
 Disciplina
 
-Esses indicadores são registrados no SGCL e compõem o histórico comportamental do aluno.
+Esses indicadores são registrados no Sys Belt e compõem o histórico comportamental do aluno.
 
 ---
 
@@ -522,9 +522,9 @@ O sistema permitirá, futuramente, o compartilhamento de informações do prontu
 
 ---
 
-# Uso do SGCL
+# Uso do Sys Belt
 
-O SGCL é o instrumento oficial para registrar:
+O Sys Belt é o instrumento oficial para registrar:
 
 - presença
 - evolução
@@ -550,4 +550,4 @@ Novas técnicas, jogos, metodologias e critérios poderão ser incorporados conf
 
 A metodologia da Cia de Lutas Weberty Viana busca formar crianças tecnicamente preparadas, emocionalmente equilibradas e comprometidas com valores que ultrapassam o ambiente esportivo.
 
-O SGCL Kids foi concebido para apoiar essa missão, transformando o acompanhamento pedagógico em um processo estruturado, mensurável e contínuo.
+O Sys Belt - Sistema Faixa Preta foi concebido para apoiar essa missão, transformando o acompanhamento pedagógico em um processo estruturado, mensurável e contínuo.

@@ -40,7 +40,7 @@ app.get("/", (req, res) => {
   console.log("Entrou na rota raiz");
 
   return res.json({
-    projeto: "SGCL",
+    projeto: "Sys Belt - Sistema Faixa Preta",
     versao: "1.0.0",
   });
 });

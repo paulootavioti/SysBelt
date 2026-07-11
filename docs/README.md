@@ -1,4 +1,4 @@
-# SGCL Kids
+# Sys Belt - Sistema Faixa Preta
 
 > Sistema de Gestão da Cia de Lutas Weberty Viana
 
@@ -6,7 +6,7 @@
 
 # Sobre o projeto
 
-O **SGCL Kids (Sistema de Gestão Cia de Lutas Kids)** é uma plataforma desenvolvida para realizar a gestão completa de academias de Jiu-Jitsu Infantil.
+O **Sys Belt - Sistema Faixa Preta** é uma plataforma desenvolvida para realizar a gestão completa de academias de Jiu-Jitsu Infantil.
 
 O projeto nasceu da necessidade de integrar em um único sistema:
 
@@ -19,7 +19,7 @@ O projeto nasceu da necessidade de integrar em um único sistema:
 - Competições
 - Relatórios
 
-O grande diferencial do SGCL é unir a gestão administrativa com o planejamento pedagógico do Jiu-Jitsu Kids.
+O grande diferencial do Sys Belt é unir a gestão administrativa com o planejamento pedagógico do Jiu-Jitsu Kids.
 
 ---
 

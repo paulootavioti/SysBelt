@@ -8,7 +8,7 @@ Versão do documento: 1.0
 
 # Visão Geral
 
-A API do SGCL Kids segue o padrão RESTful utilizando JSON para troca de informações entre frontend e backend.
+A API do Sys Belt - Sistema Faixa Preta segue o padrão RESTful utilizando JSON para troca de informações entre frontend e backend.
 
 Todas as respostas utilizam UTF-8.
 

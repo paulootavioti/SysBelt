@@ -65,7 +65,10 @@ export function Layout({ children }: LayoutProps) {
     <div className="layout">
       <aside className={`sidebar${menuAberto ? " sidebar-aberta" : ""}`}>
         <div className="sidebar-topo">
-          <h2>SGCL Kids</h2>
+          <div className="sidebar-marca">
+            <h2>Sys Belt</h2>
+            <span>Sistema Faixa Preta</span>
+          </div>
 
           <button
             type="button"

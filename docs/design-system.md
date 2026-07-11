@@ -8,7 +8,7 @@ Versão: 1.0
 
 # Objetivo
 
-O Design System do SGCL define todos os padrões visuais e de interação da aplicação.
+O Design System do Sys Belt define todos os padrões visuais e de interação da aplicação.
 
 Seu objetivo é garantir:
 
@@ -661,4 +661,4 @@ Internacionalização
 
 # Conclusão
 
-O Design System do SGCL garante que todas as telas da aplicação mantenham a mesma identidade visual e comportamento, reduzindo inconsistências e acelerando o desenvolvimento de novas funcionalidades.
+O Design System do Sys Belt garante que todas as telas da aplicação mantenham a mesma identidade visual e comportamento, reduzindo inconsistências e acelerando o desenvolvimento de novas funcionalidades.

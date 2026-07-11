@@ -1,4 +1,4 @@
-# SGCL Kids — Roadmap Oficial
+# Sys Belt - Sistema Faixa Preta — Roadmap Oficial
 
 > Documento de Planejamento Estratégico
 
@@ -10,7 +10,7 @@ Versão do documento: 2.0
 
 # Visão
 
-O SGCL Kids é um sistema completo de gestão para academias de Jiu-Jitsu Infantil.
+O Sys Belt - Sistema Faixa Preta é um sistema completo de gestão para academias de Jiu-Jitsu Infantil.
 
 O projeto foi concebido para unir:
 
@@ -483,7 +483,7 @@ Planejada para:
 
 # Longo Prazo
 
-Transformar o SGCL Kids em uma plataforma SaaS para academias de artes marciais.
+Transformar o Sys Belt - Sistema Faixa Preta em uma plataforma SaaS para academias de artes marciais.
 
 ---
 

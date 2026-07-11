@@ -8,7 +8,7 @@ Versão do documento: 1.0
 
 # Objetivo
 
-O banco de dados do SGCL Kids foi modelado para representar toda a vida acadêmica, esportiva e administrativa do aluno.
+O banco de dados do Sys Belt - Sistema Faixa Preta foi modelado para representar toda a vida acadêmica, esportiva e administrativa do aluno.
 
 O modelo foi desenvolvido utilizando Prisma ORM, permitindo compatibilidade entre SQLite (desenvolvimento) e PostgreSQL (produção).
 
@@ -921,4 +921,4 @@ Documentos
 
 # Conclusão
 
-O modelo de dados do SGCL Kids foi concebido para representar toda a jornada do aluno, desde sua matrícula até sua evolução esportiva, mantendo histórico completo e permitindo futuras expansões para uma plataforma SaaS sem necessidade de remodelagem estrutural.
+O modelo de dados do Sys Belt - Sistema Faixa Preta foi concebido para representar toda a jornada do aluno, desde sua matrícula até sua evolução esportiva, mantendo histórico completo e permitindo futuras expansões para uma plataforma SaaS sem necessidade de remodelagem estrutural.

@@ -39,9 +39,9 @@ export function Login() {
     <div className="login-page">
       <div className="login-card">
         <div className="login-brand">
-          <span className="login-brand-selo">SGCL</span>
-          <h1>SGCL Kids</h1>
-          <p>Gestão de academia e artes marciais</p>
+          <span className="login-brand-selo">SB</span>
+          <h1>Sys Belt</h1>
+          <p>Sistema Faixa Preta</p>
         </div>
 
         <form className="login-form" onSubmit={handleSubmit}>

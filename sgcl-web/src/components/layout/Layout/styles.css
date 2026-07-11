@@ -26,6 +26,12 @@
 
 }
 
+.sidebar-marca{
+
+  min-width:0;
+
+}
+
 .sidebar h2{
 
   margin-top:0;
@@ -34,6 +40,26 @@
   color:var(--accent);
 
   letter-spacing:.02em;
+
+  white-space:nowrap;
+
+}
+
+.sidebar-marca span{
+
+  display:block;
+
+  margin-top:2px;
+
+  font-size:11px;
+
+  color:rgba(255,255,255,.6);
+
+  text-transform:uppercase;
+
+  letter-spacing:.06em;
+
+  white-space:nowrap;
 
 }
 

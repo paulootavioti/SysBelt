@@ -8,7 +8,7 @@ Versão: 1.0
 
 # Objetivo
 
-Este documento define todas as diretrizes de segurança adotadas pelo SGCL Kids.
+Este documento define todas as diretrizes de segurança adotadas pelo Sys Belt - Sistema Faixa Preta.
 
 Seu objetivo é proteger:
 
@@ -23,7 +23,7 @@ Seu objetivo é proteger:
 
 # Princípios
 
-Toda funcionalidade do SGCL deve obedecer aos seguintes princípios:
+Toda funcionalidade do Sys Belt deve obedecer aos seguintes princípios:
 
 - Confidencialidade
 - Integridade
@@ -582,6 +582,6 @@ Integração com serviços de monitoramento
 
 # Conclusão
 
-A segurança do SGCL deve evoluir continuamente.
+A segurança do Sys Belt deve evoluir continuamente.
 
 Toda nova funcionalidade deverá ser analisada sob a perspectiva de proteção dos dados, controle de acesso e conformidade com as boas práticas de desenvolvimento seguro.

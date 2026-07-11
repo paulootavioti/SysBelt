@@ -8,7 +8,7 @@ Versão: 1.0
 
 # Objetivo
 
-Este documento define a estratégia oficial de testes do SGCL Kids.
+Este documento define a estratégia oficial de testes do Sys Belt - Sistema Faixa Preta.
 
 Seu objetivo é garantir que todas as funcionalidades entregues apresentem qualidade, estabilidade e segurança antes de serem disponibilizadas aos usuários.
 
@@ -37,7 +37,7 @@ Nenhuma funcionalidade deve ser considerada concluída sem passar pelos critéri
 
 # Tipos de Teste
 
-O SGCL utiliza quatro níveis.
+O Sys Belt utiliza quatro níveis.
 
 - Testes manuais
 - Testes unitários
@@ -662,6 +662,6 @@ Fluxos críticos
 
 # Conclusão
 
-Os testes garantem que o SGCL evolua com segurança e previsibilidade.
+Os testes garantem que o Sys Belt evolua com segurança e previsibilidade.
 
 Toda nova funcionalidade deverá passar pelos critérios definidos neste documento antes de ser considerada pronta para uso.

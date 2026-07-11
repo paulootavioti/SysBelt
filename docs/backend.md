@@ -8,7 +8,7 @@ Versão do documento: 1.0
 
 # Objetivo
 
-O backend do SGCL Kids é responsável por toda a regra de negócio da aplicação.
+O backend do Sys Belt - Sistema Faixa Preta é responsável por toda a regra de negócio da aplicação.
 
 Nenhuma regra de negócio deve existir no frontend.
 
@@ -795,6 +795,6 @@ Próximas melhorias
 
 # Conclusão
 
-O backend do SGCL Kids foi projetado para manter uma arquitetura limpa, modular e escalável, garantindo facilidade de manutenção e evolução contínua do sistema.
+O backend do Sys Belt - Sistema Faixa Preta foi projetado para manter uma arquitetura limpa, modular e escalável, garantindo facilidade de manutenção e evolução contínua do sistema.
 
 Todas as novas funcionalidades devem seguir os padrões definidos neste documento para preservar a consistência do projeto.

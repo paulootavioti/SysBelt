@@ -1,8 +1,8 @@
-# Coding Standards - SGCL
+# Coding Standards - Sys Belt
 
 ## Objetivo
 
-Este documento define os padrões de desenvolvimento adotados no SGCL.
+Este documento define os padrões de desenvolvimento adotados no Sys Belt.
 
 ---
 

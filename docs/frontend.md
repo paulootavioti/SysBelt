@@ -8,7 +8,7 @@ Versão do documento: 1.0
 
 # Objetivo
 
-O frontend do SGCL Kids foi desenvolvido utilizando React + TypeScript e segue uma arquitetura modular baseada em domínio.
+O frontend do Sys Belt - Sistema Faixa Preta foi desenvolvido utilizando React + TypeScript e segue uma arquitetura modular baseada em domínio.
 
 Cada módulo da aplicação é independente, contendo suas próprias páginas, componentes, serviços, tipos, validações e utilitários.
 
@@ -433,7 +433,7 @@ Botões
 
 # Design System
 
-O SGCL possui Design System próprio.
+O Sys Belt possui Design System próprio.
 
 Componentes principais
 
@@ -738,4 +738,4 @@ Próximas evoluções
 
 # Conclusão
 
-O frontend do SGCL Kids foi projetado para ser modular, escalável e consistente. Todo novo desenvolvimento deve seguir os padrões descritos neste documento para manter a organização e a experiência do usuário em toda a aplicação.
+O frontend do Sys Belt - Sistema Faixa Preta foi projetado para ser modular, escalável e consistente. Todo novo desenvolvimento deve seguir os padrões descritos neste documento para manter a organização e a experiência do usuário em toda a aplicação.

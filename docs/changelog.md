@@ -1,6 +1,6 @@
 # Changelog
 
-Todas as mudanças relevantes do SGCL Kids serão documentadas neste arquivo.
+Todas as mudanças relevantes do Sys Belt - Sistema Faixa Preta serão documentadas neste arquivo.
 
 O formato utilizado segue o conceito do **Keep a Changelog**, adaptado para o projeto.
 

@@ -1,8 +1,8 @@
-# SGCL - Sistema de Gestão da Cia de Lutas
+# Sys Belt - Sistema Faixa Preta
 
 ## Visão
 
-O SGCL é um sistema de gestão desenvolvido para academias de Jiu-Jitsu, inicialmente criado para atender às necessidades da Cia de Lutas Weberty Viana.
+O Sys Belt é um sistema de gestão desenvolvido para academias de Jiu-Jitsu, inicialmente criado para atender às necessidades da Cia de Lutas Weberty Viana.
 
 O objetivo é centralizar todas as informações acadêmicas, administrativas e financeiras em uma única plataforma.
 
