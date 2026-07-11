@@ -6,6 +6,8 @@ export interface Graduacao {
   aluno?: {
     id: number;
     nome: string;
+    apelido?: string | null;
+    grau: number;
   };
 }
 

@@ -22,7 +22,7 @@ export function Table<T extends { id: number }>({
         <thead>
           <tr>
             {columns.map((column) => (
-              <th key={String(column.accessor)}>
+              <th key={`${column.header}-${String(column.accessor)}`}>
                 {column.header}
               </th>
             ))}
@@ -33,7 +33,7 @@ export function Table<T extends { id: number }>({
           {data.map((item) => (
             <tr key={item.id}>
               {columns.map((column) => (
-                <td key={String(column.accessor)}>
+                <td key={`${column.header}-${String(column.accessor)}`}>
                   {column.render
                     ? column.render(item)
                     : String(item[column.accessor])}

@@ -18,6 +18,7 @@ import {
   LuChartLine,
   LuPiggyBank,
   LuCreditCard,
+  LuMessageCircle,
   LuLogOut,
   LuMenu,
   LuX,
@@ -43,6 +44,7 @@ const NAV_ITEMS = [
   { to: "/relatorios", label: "Relatórios", icon: LuChartLine },
   { to: "/financeiro", label: "Financeiro", icon: LuPiggyBank },
   { to: "/planos", label: "Planos", icon: LuCreditCard },
+  { to: "/mensagens", label: "Mensagens", icon: LuMessageCircle },
 ];
 
 export function Layout({ children }: LayoutProps) {

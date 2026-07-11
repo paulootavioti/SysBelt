@@ -16,7 +16,22 @@ export class GetAulaService {
         },
         alunos: {
           include: {
-            aluno: true,
+            aluno: {
+              include: {
+                responsaveis: {
+                  where: { ativo: true },
+                  select: {
+                    id: true,
+                    nome: true,
+                    apelido: true,
+                    telefone: true,
+                    whatsapp: true,
+                    parentesco: true,
+                    recebeComunicados: true,
+                  },
+                },
+              },
+            },
           },
           orderBy: {
             aluno: {

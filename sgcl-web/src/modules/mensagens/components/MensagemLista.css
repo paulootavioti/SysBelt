@@ -1,0 +1,48 @@
+.mensagem-lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.mensagem-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  background: var(--color-surface);
+}
+
+.mensagem-card-cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.mensagem-card-tag {
+  font-size: var(--font-sm);
+  color: var(--color-text-light);
+  background: var(--color-accent-soft);
+  border-radius: var(--radius-sm);
+  padding: 2px var(--space-2);
+}
+
+.mensagem-card-texto {
+  white-space: pre-wrap;
+  margin: var(--space-3) 0;
+  color: var(--color-text);
+  font-size: var(--font-sm);
+  line-height: 1.5;
+}
+
+.mensagem-card-acoes {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.mensagem-card-sem-telefone {
+  color: var(--color-text-light);
+  font-size: var(--font-sm);
+}

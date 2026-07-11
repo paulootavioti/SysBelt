@@ -39,9 +39,19 @@ export interface AulaAluno {
   aluno: {
     id: number;
     nome: string;
+    apelido?: string | null;
     faixa: string;
     grau: number;
     dataNascimento: string;
+    responsaveis?: {
+      id: number;
+      nome: string;
+      apelido?: string | null;
+      telefone?: string | null;
+      whatsapp?: string | null;
+      parentesco: string;
+      recebeComunicados: boolean;
+    }[];
   };
 }
 

@@ -31,6 +31,7 @@ import { Turmas } from "../modules/turmas/pages/Listar";
 import { DetalheTurma } from "../modules/turmas/pages/Detalhes";
 
 import { Planos } from "../modules/planos/pages/Listar";
+import { Mensagens } from "../modules/mensagens/pages/Listar";
 
 export function AppRoutes() {
   return (
@@ -240,6 +241,15 @@ export function AppRoutes() {
         element={
           <PrivateRoute>
             <ProgramacaoAulas />
+          </PrivateRoute>
+        }
+      />
+
+      <Route
+        path="/mensagens"
+        element={
+          <PrivateRoute>
+            <Mensagens />
           </PrivateRoute>
         }
       />

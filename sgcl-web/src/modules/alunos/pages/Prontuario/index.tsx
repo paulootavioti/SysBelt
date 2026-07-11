@@ -24,6 +24,7 @@ interface ProntuarioAlunoData {
   aluno: {
     id: number;
     nome: string;
+    apelido?: string | null;
     dataNascimento: string;
     telefone?: string | null;
     email?: string | null;
@@ -100,7 +101,7 @@ export function ProntuarioAluno() {
 
   return (
     <Page>
-      <PageHeader title={aluno.nome} subtitle="Prontuário completo do aluno." />
+      <PageHeader title={aluno.apelido || aluno.nome} subtitle="Prontuário completo do aluno." />
 
       <div className="prontuario-grid">
         <InfoCard

@@ -54,31 +54,32 @@ export function Alunos() {
     }
   }
 
-  const alunosFiltrados = alunos.filter((aluno) =>
-    aluno.nome.toLowerCase().includes(busca.toLowerCase())
-  );
+  const alunosFiltrados = alunos.filter((aluno) => {
+    const termo = busca.toLowerCase();
+    return (
+      aluno.nome.toLowerCase().includes(termo) ||
+      (aluno.apelido ?? "").toLowerCase().includes(termo)
+    );
+  });
 
   const columns = [
     {
-      header: "Nome",
-      accessor: "nome" as const,
+      header: "Apelido",
+      accessor: "apelido" as const,
+      render: (aluno: Aluno) => aluno.apelido || aluno.nome,
     },
     {
       header: "Idade",
       accessor: "dataNascimento" as const,
       render: (aluno: Aluno) => {
         const idade = calcularIdade(aluno.dataNascimento);
-    
+
         return idade !== null ? `${idade} anos` : "-";
       },
     },
     {
       header: "Faixa",
       accessor: "faixa" as const,
-    },
-    {
-      header: "Grau",
-      accessor: "grau" as const,
     },
     {
       header: "Telefone",

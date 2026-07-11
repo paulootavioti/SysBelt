@@ -49,6 +49,11 @@ export function ListarGraduacoes() {
       accessor: "faixa" as const,
     },
     {
+      header: "Grau",
+      accessor: "alunoId" as const,
+      render: (grad: Graduacao) => grad.aluno?.grau ?? "-",
+    },
+    {
       header: "Data",
       accessor: "data" as const,
       render: (grad: Graduacao) => formatarData(grad.data),

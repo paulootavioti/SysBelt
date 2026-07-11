@@ -144,6 +144,7 @@ export function ChamadaAula() {
           key={registro.id}
           registro={registro}
           aulaFinalizada={aula.status === "FINALIZADA"}
+          dataAula={aula.data}
           onChange={atualizarAluno}
         />
       ))}
