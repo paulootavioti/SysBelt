@@ -1,0 +1,25 @@
+[build]
+  command = "npm install && npx prisma generate && cd sgcl-web && npm install && npm run build"
+  publish = "sgcl-web/dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+[functions.api]
+  included_files = ["node_modules/.prisma/client/**"]
+
+# Chamadas de API do frontend vão para /api/*, resolvidas pela function.
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api/:splat"
+  status = 200
+
+# Fallback de SPA: qualquer outra rota cai no index.html (React Router cuida do resto).
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
